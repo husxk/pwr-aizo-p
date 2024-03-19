@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 static int
 menu()
 {
@@ -29,13 +28,15 @@ main()
   while(true)
   {
     const int option = menu();
+    getchar(); // skip \n
 
     switch(option)
     {
       case '6':
       {
-        return 1;
+        return 0;
       } break;
     }
   }
+
 }
