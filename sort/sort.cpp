@@ -1,4 +1,8 @@
 #include <stdio.h>
+#include <stdint.h>
+
+#include "array.h"
+#include "file_parser.h"
 
 static int
 menu()
@@ -25,6 +29,11 @@ menu()
 int
 main()
 {
+
+  auto parser     = new file_parser();
+  auto arr        = new array();
+  auto arr_sorted = new array();
+
   while(true)
   {
     const int option = menu();
@@ -32,8 +41,40 @@ main()
 
     switch(option)
     {
+      case '1':
+      {
+        parser->get_filename();
+        parser->parse_format_file(arr);
+      } break;
+
+      case '2':
+      {
+        parser->get_size(arr);
+        parser->parse_file(arr);
+      } break;
+
+      case '3':
+      {
+        if(arr->ptr == NULL)
+        {
+           printf("No loaded array!\n");
+           continue;
+        }
+
+        for(size_t i = 0; i < arr->size; i++)
+        {
+           printf("%u ", arr->ptr[i]);
+
+           if(i + 1 % 10 == 0)
+            printf("\n");
+        }
+      } break;
+
       case '6':
       {
+        delete arr;
+        delete arr_sorted;
+        delete parser;
         return 0;
       } break;
     }
