@@ -1,13 +1,47 @@
 #pragma once
-#include "common.h"
 
+#include <cstring>
+#include <cstdio>
+
+template <class T>
 class array
 {
 public:
-  ARRAY_SPECIFIER*  ptr;
-  size_t size;
+  T*  ptr;
+  size_t size, allocated_size;
 
-  array(ARRAY_SPECIFIER* ptr, size_t size)
+  void
+  copy(const array* another)
+  {
+    size = another->size;
+
+    if(ptr == NULL)
+    {
+      ptr            = new T[size];
+      allocated_size = size;
+    }
+    else if(allocated_size < size)
+    {
+      delete[] ptr;
+      ptr            = new T[size];
+      allocated_size = size;
+    }
+    memcpy(ptr, another->ptr, another->size * sizeof(T));
+  }
+
+  void
+  print()
+  {
+    printf("\n\n");
+    for(size_t i = 0; i < size; i++)
+    {
+      printf("%u ", ptr[i]);
+      if((i + 1) % 10 == 0)
+        printf("\n");
+    }
+  }
+
+  array(T* ptr, size_t size)
   {
     this->ptr  = ptr;
     this->size = size;

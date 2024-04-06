@@ -30,9 +30,9 @@ int
 main()
 {
 
-  auto parser     = new file_parser();
-  auto arr        = new array();
-  auto arr_sorted = new array();
+  auto parser      = new file_parser();
+  auto* arr        = new array<uint32_t>();
+  auto* arr_sorted = new array<uint32_t>();
 
   while(true)
   {
@@ -61,13 +61,13 @@ main()
            continue;
         }
 
-        for(size_t i = 0; i < arr->size; i++)
-        {
-           printf("%u ", arr->ptr[i]);
+        arr->print();
 
-           if(i + 1 % 10 == 0)
-            printf("\n");
-        }
+     } break;
+
+      case '5':
+      {
+        arr_sorted->print();
       } break;
 
       case '6':
