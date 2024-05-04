@@ -2,14 +2,12 @@
 #include <fstream>
 
 #include "array.h"
+#include "random.h"
 
-static constexpr size_t
-FILENAME_LENGTH = 1024;
+#define FILENAME_LENGTH 1024
 
 static constexpr size_t
 READ_BUFFER_SIZE = 255;
-
-
 
 class file_parser
 {
@@ -75,19 +73,6 @@ public:
 
     arr->ptr = new T[arr->size];
 
-    std::ifstream file;
-    file.open("/dev/random");
-
-    if(!file.good())
-    {
-      printf("Bad filename! Try again!\n");
-      file.close();
-      return;
-    }
-
-    file.read((char*)arr->ptr, arr->size * sizeof(T));
-
-    file.close();
-    return;
+    get_random((uint8_t*)arr->ptr, arr->size * sizeof(T));
   }
 };

@@ -13,4 +13,7 @@ run:
 clean:
 	rm -rf build/
 
-.PHONY: clean run compile
+dump: build/
+	objdump -M intel -S -d build/sort > dump.txt
+
+.PHONY: clean run compile dump
