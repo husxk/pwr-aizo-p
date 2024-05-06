@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <stdint.h>
+#include <chrono>
 
 #include "array.h"
+#include "sorting.h"
 #include "file_parser.h"
 
-static void
+static int
 choose_sort()
 {
   printf("\nChoose:\n");
@@ -16,36 +18,116 @@ choose_sort()
   printf("\nInput:  ");
 
   const char input = getchar();
+  getchar();
 
   if(input < 49 || input > 53)
   {
     printf("\nWrong input, try again!\n");
-    return menu();
+    return choose_sort();
   }
   return input;
 }
 
+static int
+pick_shell_sort()
+{
+  printf("\nChoose:\n");
+  printf("1. Knuth\n");
+  printf("2. Shell\n");
+  printf("3. Exit\n");
+  printf("\nInput:  ");
+
+  const char input = getchar();
+
+  if(input < 49 || input > 51)
+  {
+    printf("\nWrong input, try again!\n");
+    return pick_shell_sort();
+  }
+  return input;
+}
+
+static int
+pick_pivot()
+{
+  printf("\nChoose:\n");
+  printf("1. Left\n");
+  printf("2. Right\n");
+  printf("3. Random\n");
+  printf("4. Exit\n");
+  printf("\nInput:  ");
+
+  const char input = getchar();
+
+  if(input < 49 || input > 52)
+  {
+    printf("\nWrong input, try again!\n");
+    return pick_pivot();
+  }
+  return input;
+}
+
+#define NOW() \
+        std::chrono::high_resolution_clock::now()
+
 template <typename T>
 static void
-handle_sorting(array<T>* arr, sorting<T>* sort)
+handle_sorting(array<T>* arr, array<T>* arr_sort, sorting<T>* sort)
 {
-  const int sort = choose_sort();
+  using time_ms = std::chrono::duration<float, std::chrono::milliseconds::period>;
+
+  const int sort_ = choose_sort();
   
-  if(sort == '5')
+  if(sort_ == '5')
     return;
 
-  sort->set_array(arr);
+  arr_sort->copy(arr);
+  sort->set_array(arr_sort);
 
-  switch(sort)
+  switch(sort_)
   {
     case '1':
     {
+      auto start = NOW();
       sort->insertion_sort();
+      auto end = NOW();
+      auto elapsed = time_ms(end - start);
+
+      printf("\nTime: %fms", elapsed.count());
     } break;
 
     case '2':
     {
-    }
+      auto shell = pick_shell_sort();
+      sort->shell_calculate_gaps(shell);
+
+      auto start = NOW();
+      sort->shell_sort();
+      auto end = NOW();
+      auto elapsed = time_ms(end - start);
+
+      printf("\nTime: %fms", elapsed.count());
+    } break;
+
+    case '3':
+    {
+      auto start = NOW();
+      sort->quicksort_start();
+      auto end = NOW();
+      auto elapsed = time_ms(end - start);
+
+      printf("\nTime: %fms", elapsed.count());
+    } break;
+
+    case '4':
+    {
+      auto start = NOW();
+      sort->heap_sort();
+      auto end = NOW();
+      auto elapsed = time_ms(end - start);
+
+      printf("\nTime: %fms", elapsed.count());
+    } break;
   }
 
 }
@@ -115,7 +197,7 @@ main()
 
      case '4':
       {
-        handle_sorting(arr, sort);
+        handle_sorting(arr, arr_sorted, sort);
       } break;
 
       case '5':
@@ -125,7 +207,7 @@ main()
 
       case '6':
       {
-        arr->is_sorted() ?
+        arr_sorted->is_sorted() ?
           printf("Success! Array is sorted!\n") :
           printf("Fail! Array is not sorted!\n");
       } break;
@@ -135,6 +217,7 @@ main()
         delete arr;
         delete arr_sorted;
         delete parser;
+        delete sort;
         return 0;
       } break;
     }

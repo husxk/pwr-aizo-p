@@ -2,7 +2,7 @@
 all: build/ compile
 
 compile: build/
-	make -C build/ -j${nproc}
+	make -C build/ -j$(nproc)
 
 build/: 
 	cmake -B build/
@@ -16,4 +16,4 @@ clean:
 dump: build/
 	objdump -M intel -S -d build/sort > dump.txt
 
-.PHONY: clean run compile dump
+.PHONY: all clean run compile dump

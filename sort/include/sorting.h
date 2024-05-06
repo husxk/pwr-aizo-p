@@ -1,5 +1,6 @@
 #pragma once
 #include "array.h"
+#include "random.h"
 
 #include <vector>
 #include <cstdint>
@@ -65,10 +66,11 @@ public:
       {
           T tmp = arr.ptr[i];
 
-          for(size_t j = i + shell_gap; j < arr.size && tmp > arr.ptr[j]; j += shell_gap)
+          size_t j;
+          for(j = i + shell_gap; j < arr.size && tmp > arr.ptr[j]; j += shell_gap)
             arr.ptr[j - shell_gap] = arr.ptr[j];
 
-          arr.ptr[i - shell_gap] = tmp;
+          arr.ptr[j - shell_gap] = tmp;
       }
     }
   }
@@ -79,16 +81,13 @@ public:
     
   }
 
-  void set_pivot(int i)
+  void
+  quicksort_start()
   {
-    if(i == 0)
-      _pivot = 0;
-    else if(i == 2)
-      _pivot = arr.size - 1;
-    else if(i == 3)
-    {
-    }
+    quicksort(0, arr.size - 1);
   }
+
+private:
 
   void
   quicksort(size_t l, size_t r)
@@ -101,17 +100,15 @@ public:
     quicksort(i + 1, r);
   }
 
-private:
-
   int32_t
   qpart(int32_t l, int32_t r)
   {
-    T pivot = arr.ptr[_pivot];
-    int32_t l_ = l, r_ = r;
+    T pivot = arr.ptr[l];
+    int32_t r_ = r;
 
     while(true)
     {
-      while(arr.ptr[l] < pivot && l < arr.size) l++;
+      while(arr.ptr[l] < pivot && l < (int32_t) arr.size) l++;
       while(arr.ptr[r] > pivot && r >= 0) r--;
 
       if(l < r)

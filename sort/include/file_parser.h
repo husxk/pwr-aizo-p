@@ -73,6 +73,6 @@ public:
 
     arr->ptr = new T[arr->size];
 
-    get_random((uint8_t*)arr->ptr, arr->size * sizeof(T));
+    get_random_x((uint8_t*)arr->ptr, arr->size * sizeof(T));
   }
 };
