@@ -1,0 +1,1493 @@
+
+build/sort:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+0000000000002000 <_init>:
+    2000:	f3 0f 1e fa          	endbr64
+    2004:	48 83 ec 08          	sub    rsp,0x8
+    2008:	48 8b 05 c9 3f 00 00 	mov    rax,QWORD PTR [rip+0x3fc9]        # 5fd8 <__gmon_start__@Base>
+    200f:	48 85 c0             	test   rax,rax
+    2012:	74 02                	je     2016 <_init+0x16>
+    2014:	ff d0                	call   rax
+    2016:	48 83 c4 08          	add    rsp,0x8
+    201a:	c3                   	ret
+
+Disassembly of section .plt:
+
+0000000000002020 <_Znam@plt-0x10>:
+    2020:	ff 35 ca 3f 00 00    	push   QWORD PTR [rip+0x3fca]        # 5ff0 <_GLOBAL_OFFSET_TABLE_+0x8>
+    2026:	ff 25 cc 3f 00 00    	jmp    QWORD PTR [rip+0x3fcc]        # 5ff8 <_GLOBAL_OFFSET_TABLE_+0x10>
+    202c:	0f 1f 40 00          	nop    DWORD PTR [rax+0x0]
+
+0000000000002030 <_Znam@plt>:
+    2030:	ff 25 ca 3f 00 00    	jmp    QWORD PTR [rip+0x3fca]        # 6000 <_Znam@GLIBCXX_3.4>
+    2036:	68 00 00 00 00       	push   0x0
+    203b:	e9 e0 ff ff ff       	jmp    2020 <_init+0x20>
+
+0000000000002040 <printf@plt>:
+    2040:	ff 25 c2 3f 00 00    	jmp    QWORD PTR [rip+0x3fc2]        # 6008 <printf@GLIBC_2.2.5>
+    2046:	68 01 00 00 00       	push   0x1
+    204b:	e9 d0 ff ff ff       	jmp    2020 <_init+0x20>
+
+0000000000002050 <_ZNSt13basic_filebufIcSt11char_traitsIcEE5closeEv@plt>:
+    2050:	ff 25 ba 3f 00 00    	jmp    QWORD PTR [rip+0x3fba]        # 6010 <_ZNSt13basic_filebufIcSt11char_traitsIcEE5closeEv@GLIBCXX_3.4>
+    2056:	68 02 00 00 00       	push   0x2
+    205b:	e9 c0 ff ff ff       	jmp    2020 <_init+0x20>
+
+0000000000002060 <_ZNSt14basic_ifstreamIcSt11char_traitsIcEED1Ev@plt>:
+    2060:	ff 25 b2 3f 00 00    	jmp    QWORD PTR [rip+0x3fb2]        # 6018 <_ZNSt14basic_ifstreamIcSt11char_traitsIcEED1Ev@GLIBCXX_3.4>
+    2066:	68 03 00 00 00       	push   0x3
+    206b:	e9 b0 ff ff ff       	jmp    2020 <_init+0x20>
+
+0000000000002070 <getc@plt>:
+    2070:	ff 25 aa 3f 00 00    	jmp    QWORD PTR [rip+0x3faa]        # 6020 <getc@GLIBC_2.2.5>
+    2076:	68 04 00 00 00       	push   0x4
+    207b:	e9 a0 ff ff ff       	jmp    2020 <_init+0x20>
+
+0000000000002080 <_ZNSt8ios_baseC2Ev@plt>:
+    2080:	ff 25 a2 3f 00 00    	jmp    QWORD PTR [rip+0x3fa2]        # 6028 <_ZNSt8ios_baseC2Ev@GLIBCXX_3.4>
+    2086:	68 05 00 00 00       	push   0x5
+    208b:	e9 90 ff ff ff       	jmp    2020 <_init+0x20>
+
+0000000000002090 <_ZNSt8ios_baseD2Ev@plt>:
+    2090:	ff 25 9a 3f 00 00    	jmp    QWORD PTR [rip+0x3f9a]        # 6030 <_ZNSt8ios_baseD2Ev@GLIBCXX_3.4>
+    2096:	68 06 00 00 00       	push   0x6
+    209b:	e9 80 ff ff ff       	jmp    2020 <_init+0x20>
+
+00000000000020a0 <__isoc23_sscanf@plt>:
+    20a0:	ff 25 92 3f 00 00    	jmp    QWORD PTR [rip+0x3f92]        # 6038 <__isoc23_sscanf@GLIBC_2.38>
+    20a6:	68 07 00 00 00       	push   0x7
+    20ab:	e9 70 ff ff ff       	jmp    2020 <_init+0x20>
+
+00000000000020b0 <__cxa_begin_catch@plt>:
+    20b0:	ff 25 8a 3f 00 00    	jmp    QWORD PTR [rip+0x3f8a]        # 6040 <__cxa_begin_catch@CXXABI_1.3>
+    20b6:	68 08 00 00 00       	push   0x8
+    20bb:	e9 60 ff ff ff       	jmp    2020 <_init+0x20>
+
+00000000000020c0 <memcpy@plt>:
+    20c0:	ff 25 82 3f 00 00    	jmp    QWORD PTR [rip+0x3f82]        # 6048 <memcpy@GLIBC_2.14>
+    20c6:	68 09 00 00 00       	push   0x9
+    20cb:	e9 50 ff ff ff       	jmp    2020 <_init+0x20>
+
+00000000000020d0 <_ZNSt13basic_filebufIcSt11char_traitsIcEE4openEPKcSt13_Ios_Openmode@plt>:
+    20d0:	ff 25 7a 3f 00 00    	jmp    QWORD PTR [rip+0x3f7a]        # 6050 <_ZNSt13basic_filebufIcSt11char_traitsIcEE4openEPKcSt13_Ios_Openmode@GLIBCXX_3.4>
+    20d6:	68 0a 00 00 00       	push   0xa
+    20db:	e9 40 ff ff ff       	jmp    2020 <_init+0x20>
+
+00000000000020e0 <_Znwm@plt>:
+    20e0:	ff 25 72 3f 00 00    	jmp    QWORD PTR [rip+0x3f72]        # 6058 <_Znwm@GLIBCXX_3.4>
+    20e6:	68 0b 00 00 00       	push   0xb
+    20eb:	e9 30 ff ff ff       	jmp    2020 <_init+0x20>
+
+00000000000020f0 <_ZdlPvm@plt>:
+    20f0:	ff 25 6a 3f 00 00    	jmp    QWORD PTR [rip+0x3f6a]        # 6060 <_ZdlPvm@CXXABI_1.3.9>
+    20f6:	68 0c 00 00 00       	push   0xc
+    20fb:	e9 20 ff ff ff       	jmp    2020 <_init+0x20>
+
+0000000000002100 <_ZNSt13basic_filebufIcSt11char_traitsIcEEC1Ev@plt>:
+    2100:	ff 25 62 3f 00 00    	jmp    QWORD PTR [rip+0x3f62]        # 6068 <_ZNSt13basic_filebufIcSt11char_traitsIcEEC1Ev@GLIBCXX_3.4>
+    2106:	68 0d 00 00 00       	push   0xd
+    210b:	e9 10 ff ff ff       	jmp    2020 <_init+0x20>
+
+0000000000002110 <__stack_chk_fail@plt>:
+    2110:	ff 25 5a 3f 00 00    	jmp    QWORD PTR [rip+0x3f5a]        # 6070 <__stack_chk_fail@GLIBC_2.4>
+    2116:	68 0e 00 00 00       	push   0xe
+    211b:	e9 00 ff ff ff       	jmp    2020 <_init+0x20>
+
+0000000000002120 <_ZNKSt5ctypeIcE13_M_widen_initEv@plt>:
+    2120:	ff 25 52 3f 00 00    	jmp    QWORD PTR [rip+0x3f52]        # 6078 <_ZNKSt5ctypeIcE13_M_widen_initEv@GLIBCXX_3.4.11>
+    2126:	68 0f 00 00 00       	push   0xf
+    212b:	e9 f0 fe ff ff       	jmp    2020 <_init+0x20>
+
+0000000000002130 <_ZNSi4readEPcl@plt>:
+    2130:	ff 25 4a 3f 00 00    	jmp    QWORD PTR [rip+0x3f4a]        # 6080 <_ZNSi4readEPcl@GLIBCXX_3.4>
+    2136:	68 10 00 00 00       	push   0x10
+    213b:	e9 e0 fe ff ff       	jmp    2020 <_init+0x20>
+
+0000000000002140 <_ZSt16__throw_bad_castv@plt>:
+    2140:	ff 25 42 3f 00 00    	jmp    QWORD PTR [rip+0x3f42]        # 6088 <_ZSt16__throw_bad_castv@GLIBCXX_3.4>
+    2146:	68 11 00 00 00       	push   0x11
+    214b:	e9 d0 fe ff ff       	jmp    2020 <_init+0x20>
+
+0000000000002150 <_ZdaPv@plt>:
+    2150:	ff 25 3a 3f 00 00    	jmp    QWORD PTR [rip+0x3f3a]        # 6090 <_ZdaPv@GLIBCXX_3.4>
+    2156:	68 12 00 00 00       	push   0x12
+    215b:	e9 c0 fe ff ff       	jmp    2020 <_init+0x20>
+
+0000000000002160 <_ZNSt9basic_iosIcSt11char_traitsIcEE4initEPSt15basic_streambufIcS1_E@plt>:
+    2160:	ff 25 32 3f 00 00    	jmp    QWORD PTR [rip+0x3f32]        # 6098 <_ZNSt9basic_iosIcSt11char_traitsIcEE4initEPSt15basic_streambufIcS1_E@GLIBCXX_3.4>
+    2166:	68 13 00 00 00       	push   0x13
+    216b:	e9 b0 fe ff ff       	jmp    2020 <_init+0x20>
+
+0000000000002170 <putchar@plt>:
+    2170:	ff 25 2a 3f 00 00    	jmp    QWORD PTR [rip+0x3f2a]        # 60a0 <putchar@GLIBC_2.2.5>
+    2176:	68 14 00 00 00       	push   0x14
+    217b:	e9 a0 fe ff ff       	jmp    2020 <_init+0x20>
+
+0000000000002180 <_ZNSt6localeD1Ev@plt>:
+    2180:	ff 25 22 3f 00 00    	jmp    QWORD PTR [rip+0x3f22]        # 60a8 <_ZNSt6localeD1Ev@GLIBCXX_3.4>
+    2186:	68 15 00 00 00       	push   0x15
+    218b:	e9 90 fe ff ff       	jmp    2020 <_init+0x20>
+
+0000000000002190 <__cxa_throw_bad_array_new_length@plt>:
+    2190:	ff 25 1a 3f 00 00    	jmp    QWORD PTR [rip+0x3f1a]        # 60b0 <__cxa_throw_bad_array_new_length@CXXABI_1.3.8>
+    2196:	68 16 00 00 00       	push   0x16
+    219b:	e9 80 fe ff ff       	jmp    2020 <_init+0x20>
+
+00000000000021a0 <puts@plt>:
+    21a0:	ff 25 12 3f 00 00    	jmp    QWORD PTR [rip+0x3f12]        # 60b8 <puts@GLIBC_2.2.5>
+    21a6:	68 17 00 00 00       	push   0x17
+    21ab:	e9 70 fe ff ff       	jmp    2020 <_init+0x20>
+
+00000000000021b0 <_ZNSt13basic_filebufIcSt11char_traitsIcEED1Ev@plt>:
+    21b0:	ff 25 0a 3f 00 00    	jmp    QWORD PTR [rip+0x3f0a]        # 60c0 <_ZNSt13basic_filebufIcSt11char_traitsIcEED1Ev@GLIBCXX_3.4>
+    21b6:	68 18 00 00 00       	push   0x18
+    21bb:	e9 60 fe ff ff       	jmp    2020 <_init+0x20>
+
+00000000000021c0 <__isoc23_scanf@plt>:
+    21c0:	ff 25 02 3f 00 00    	jmp    QWORD PTR [rip+0x3f02]        # 60c8 <__isoc23_scanf@GLIBC_2.38>
+    21c6:	68 19 00 00 00       	push   0x19
+    21cb:	e9 50 fe ff ff       	jmp    2020 <_init+0x20>
+
+00000000000021d0 <__cxa_end_catch@plt>:
+    21d0:	ff 25 fa 3e 00 00    	jmp    QWORD PTR [rip+0x3efa]        # 60d0 <__cxa_end_catch@CXXABI_1.3>
+    21d6:	68 1a 00 00 00       	push   0x1a
+    21db:	e9 40 fe ff ff       	jmp    2020 <_init+0x20>
+
+00000000000021e0 <_ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate@plt>:
+    21e0:	ff 25 f2 3e 00 00    	jmp    QWORD PTR [rip+0x3ef2]        # 60d8 <_ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate@GLIBCXX_3.4>
+    21e6:	68 1b 00 00 00       	push   0x1b
+    21eb:	e9 30 fe ff ff       	jmp    2020 <_init+0x20>
+
+00000000000021f0 <_Unwind_Resume@plt>:
+    21f0:	ff 25 ea 3e 00 00    	jmp    QWORD PTR [rip+0x3eea]        # 60e0 <_Unwind_Resume@GCC_3.0>
+    21f6:	68 1c 00 00 00       	push   0x1c
+    21fb:	e9 20 fe ff ff       	jmp    2020 <_init+0x20>
+
+0000000000002200 <_ZNSt12__basic_fileIcED1Ev@plt>:
+    2200:	ff 25 e2 3e 00 00    	jmp    QWORD PTR [rip+0x3ee2]        # 60e8 <_ZNSt12__basic_fileIcED1Ev@GLIBCXX_3.4>
+    2206:	68 1d 00 00 00       	push   0x1d
+    220b:	e9 10 fe ff ff       	jmp    2020 <_init+0x20>
+
+0000000000002210 <_ZNSi7getlineEPclc@plt>:
+    2210:	ff 25 da 3e 00 00    	jmp    QWORD PTR [rip+0x3eda]        # 60f0 <_ZNSi7getlineEPclc@GLIBCXX_3.4>
+    2216:	68 1e 00 00 00       	push   0x1e
+    221b:	e9 00 fe ff ff       	jmp    2020 <_init+0x20>
+
+Disassembly of section .text:
+
+0000000000002220 <main.cold>:
+  printf("4. Run sorting algorithm\n");
+  printf("5. Show sorted array\n");
+  printf("6. Exit\n");
+  printf("\nInput:  ");
+
+  const char input = getchar();
+    2220:	e8 6b ff ff ff       	call   2190 <__cxa_throw_bad_array_new_length@plt>
+    2225:	90                   	nop
+
+0000000000002226 <_ZN11file_parser17parse_format_fileEP5array.cold>:
+       *  Initializes @c sb using its default constructor, and passes
+       *  @c &sb to the base class initializer.  Does not open any files
+       *  (you haven't given it a filename to open).
+       */
+      basic_ifstream() : __istream_type(), _M_filebuf()
+      { this->init(&_M_filebuf); }
+    2226:	48 8b 3c 24          	mov    rdi,QWORD PTR [rsp]
+    222a:	e8 81 ff ff ff       	call   21b0 <_ZNSt13basic_filebufIcSt11char_traitsIcEED1Ev@plt>
+       *
+       *  This does very little apart from providing a virtual base dtor.
+      */
+      virtual
+      ~basic_istream()
+      { _M_gcount = streamsize(0); }
+    222f:	49 8b 47 e8          	mov    rax,QWORD PTR [r15-0x18]
+    2233:	48 8b 0d 66 3b 00 00 	mov    rcx,QWORD PTR [rip+0x3b66]        # 5da0 <_ZTTSt14basic_ifstreamIcSt11char_traitsIcEE@GLIBCXX_3.4+0x10>
+    223a:	31 f6                	xor    esi,esi
+    223c:	4c 89 7c 24 20       	mov    QWORD PTR [rsp+0x20],r15
+    2241:	48 89 4c 04 20       	mov    QWORD PTR [rsp+rax*1+0x20],rcx
+    2246:	48 89 74 24 28       	mov    QWORD PTR [rsp+0x28],rsi
+       *
+       *  The destructor does nothing.  More specifically, it does not
+       *  destroy the streambuf held by rdbuf().
+      */
+      virtual
+      ~basic_ios() { }
+    224b:	48 8b 7c 24 08       	mov    rdi,QWORD PTR [rsp+0x8]
+    2250:	48 8d 05 d9 39 00 00 	lea    rax,[rip+0x39d9]        # 5c30 <_ZTVSt9basic_iosIcSt11char_traitsIcEE@GLIBCXX_3.4+0x10>
+    2257:	48 89 84 24 20 01 00 	mov    QWORD PTR [rsp+0x120],rax
+    225e:	00 
+    225f:	e8 2c fe ff ff       	call   2090 <_ZNSt8ios_baseD2Ev@plt>
+    2264:	48 8b 84 24 38 03 00 	mov    rax,QWORD PTR [rsp+0x338]
+    226b:	00 
+    226c:	64 48 2b 04 25 28 00 	sub    rax,QWORD PTR fs:0x28
+    2273:	00 00 
+    2275:	75 17                	jne    228e <_ZN11file_parser17parse_format_fileEP5array.cold+0x68>
+    2277:	48 89 df             	mov    rdi,rbx
+    227a:	e8 71 ff ff ff       	call   21f0 <_Unwind_Resume@plt>
+	__catch(...)
+    227f:	e8 2c fe ff ff       	call   20b0 <__cxa_begin_catch@plt>
+    2284:	e8 47 ff ff ff       	call   21d0 <__cxa_end_catch@plt>
+    2289:	e9 81 09 00 00       	jmp    2c0f <_ZN11file_parser17parse_format_fileEP5array+0x31f>
+    228e:	e8 7d fe ff ff       	call   2110 <__stack_chk_fail@plt>
+  sscanf(buffer, "%zu\n", &size);
+
+  if(ar->ptr != NULL)
+    delete[] ar->ptr;
+
+  ar->ptr = new ARRAY_SPECIFIER[size];
+    2293:	48 8b 84 24 38 03 00 	mov    rax,QWORD PTR [rsp+0x338]
+    229a:	00 
+    229b:	64 48 2b 04 25 28 00 	sub    rax,QWORD PTR fs:0x28
+    22a2:	00 00 
+    22a4:	75 14                	jne    22ba <_ZN11file_parser17parse_format_fileEP5array.cold+0x94>
+    22a6:	e8 e5 fe ff ff       	call   2190 <__cxa_throw_bad_array_new_length@plt>
+    22ab:	e8 00 fe ff ff       	call   20b0 <__cxa_begin_catch@plt>
+    22b0:	e8 1b ff ff ff       	call   21d0 <__cxa_end_catch@plt>
+    22b5:	e9 55 09 00 00       	jmp    2c0f <_ZN11file_parser17parse_format_fileEP5array+0x31f>
+    22ba:	e8 51 fe ff ff       	call   2110 <__stack_chk_fail@plt>
+    sscanf(buffer, "%u\n", &ar->ptr[i]);
+    i++;
+  }
+
+  file.close();
+}
+    22bf:	4c 89 f7             	mov    rdi,r14
+    22c2:	e8 99 fd ff ff       	call   2060 <_ZNSt14basic_ifstreamIcSt11char_traitsIcEED1Ev@plt>
+    22c7:	48 8b 84 24 38 03 00 	mov    rax,QWORD PTR [rsp+0x338]
+    22ce:	00 
+    22cf:	64 48 2b 04 25 28 00 	sub    rax,QWORD PTR fs:0x28
+    22d6:	00 00 
+    22d8:	75 0d                	jne    22e7 <_ZN11file_parser17parse_format_fileEP5array.cold+0xc1>
+    22da:	48 89 df             	mov    rdi,rbx
+    22dd:	e8 0e ff ff ff       	call   21f0 <_Unwind_Resume@plt>
+    22e2:	e9 b8 0a 00 00       	jmp    2d9f <_ZN11file_parser17parse_format_fileEP5array+0x4af>
+    22e7:	e8 24 fe ff ff       	call   2110 <__stack_chk_fail@plt>
+
+00000000000022ec <_ZN11file_parser10parse_fileEP5array.cold>:
+file_parser::parse_file(array* arr)
+{
+  if(arr->ptr != NULL)
+    delete[] arr->ptr;
+
+  arr->ptr = new ARRAY_SPECIFIER[arr->size];
+    22ec:	48 8b 84 24 08 02 00 	mov    rax,QWORD PTR [rsp+0x208]
+    22f3:	00 
+    22f4:	64 48 2b 04 25 28 00 	sub    rax,QWORD PTR fs:0x28
+    22fb:	00 00 
+    22fd:	75 05                	jne    2304 <_ZN11file_parser10parse_fileEP5array.cold+0x18>
+    22ff:	e8 8c fe ff ff       	call   2190 <__cxa_throw_bad_array_new_length@plt>
+    2304:	e8 07 fe ff ff       	call   2110 <__stack_chk_fail@plt>
+  file.read((char*)arr->ptr, arr->size * sizeof(ARRAY_SPECIFIER));
+
+  file.close();
+
+  return;
+}
+    2309:	4c 89 f7             	mov    rdi,r14
+    230c:	e8 4f fd ff ff       	call   2060 <_ZNSt14basic_ifstreamIcSt11char_traitsIcEED1Ev@plt>
+    2311:	48 8b 84 24 08 02 00 	mov    rax,QWORD PTR [rsp+0x208]
+    2318:	00 
+    2319:	64 48 2b 04 25 28 00 	sub    rax,QWORD PTR fs:0x28
+    2320:	00 00 
+    2322:	75 64                	jne    2388 <_ZN11file_parser10parse_fileEP5array.cold+0x9c>
+    2324:	48 89 df             	mov    rdi,rbx
+    2327:	e8 c4 fe ff ff       	call   21f0 <_Unwind_Resume@plt>
+    232c:	e8 7f fd ff ff       	call   20b0 <__cxa_begin_catch@plt>
+    2331:	e8 9a fe ff ff       	call   21d0 <__cxa_end_catch@plt>
+    2336:	e9 09 0c 00 00       	jmp    2f44 <_ZN11file_parser10parse_fileEP5array+0x194>
+      { this->init(&_M_filebuf); }
+    233b:	4c 89 e7             	mov    rdi,r12
+    233e:	e8 6d fe ff ff       	call   21b0 <_ZNSt13basic_filebufIcSt11char_traitsIcEED1Ev@plt>
+    2343:	48 8b 45 e8          	mov    rax,QWORD PTR [rbp-0x18]
+    2347:	48 8b 0d 52 3a 00 00 	mov    rcx,QWORD PTR [rip+0x3a52]        # 5da0 <_ZTTSt14basic_ifstreamIcSt11char_traitsIcEE@GLIBCXX_3.4+0x10>
+    234e:	31 d2                	xor    edx,edx
+    2350:	48 89 2c 24          	mov    QWORD PTR [rsp],rbp
+    2354:	48 89 0c 04          	mov    QWORD PTR [rsp+rax*1],rcx
+    2358:	48 89 54 24 08       	mov    QWORD PTR [rsp+0x8],rdx
+    235d:	4c 89 ef             	mov    rdi,r13
+    2360:	4c 89 bc 24 00 01 00 	mov    QWORD PTR [rsp+0x100],r15
+    2367:	00 
+    2368:	e8 23 fd ff ff       	call   2090 <_ZNSt8ios_baseD2Ev@plt>
+    236d:	48 8b 84 24 08 02 00 	mov    rax,QWORD PTR [rsp+0x208]
+    2374:	00 
+    2375:	64 48 2b 04 25 28 00 	sub    rax,QWORD PTR fs:0x28
+    237c:	00 00 
+    237e:	75 0d                	jne    238d <_ZN11file_parser10parse_fileEP5array.cold+0xa1>
+    2380:	48 89 df             	mov    rdi,rbx
+    2383:	e8 68 fe ff ff       	call   21f0 <_Unwind_Resume@plt>
+    2388:	e8 83 fd ff ff       	call   2110 <__stack_chk_fail@plt>
+    238d:	e8 7e fd ff ff       	call   2110 <__stack_chk_fail@plt>
+    2392:	66 2e 0f 1f 84 00 00 	cs nop WORD PTR [rax+rax*1+0x0]
+    2399:	00 00 00 
+    239c:	0f 1f 40 00          	nop    DWORD PTR [rax+0x0]
+
+00000000000023a0 <main>:
+  return input;
+}
+
+int
+main()
+{
+    23a0:	41 57                	push   r15
+
+  auto parser     = new file_parser();
+    23a2:	bf 00 04 00 00       	mov    edi,0x400
+{
+    23a7:	41 56                	push   r14
+    23a9:	4c 8d 35 58 1c 00 00 	lea    r14,[rip+0x1c58]        # 4008 <_IO_stdin_used+0x8>
+    23b0:	41 55                	push   r13
+    23b2:	4c 8d 2d 58 1c 00 00 	lea    r13,[rip+0x1c58]        # 4011 <_IO_stdin_used+0x11>
+    23b9:	41 54                	push   r12
+    23bb:	4c 8d 25 26 1d 00 00 	lea    r12,[rip+0x1d26]        # 40e8 <_IO_stdin_used+0xe8>
+    23c2:	55                   	push   rbp
+    23c3:	48 8d 2d 46 1d 00 00 	lea    rbp,[rip+0x1d46]        # 4110 <_IO_stdin_used+0x110>
+    23ca:	53                   	push   rbx
+    23cb:	48 8d 1d 5d 1c 00 00 	lea    rbx,[rip+0x1c5d]        # 402f <_IO_stdin_used+0x2f>
+    23d2:	48 83 ec 38          	sub    rsp,0x38
+  auto parser     = new file_parser();
+    23d6:	e8 05 fd ff ff       	call   20e0 <_Znwm@plt>
+    23db:	48 8d 78 08          	lea    rdi,[rax+0x8]
+    23df:	48 89 44 24 18       	mov    QWORD PTR [rsp+0x18],rax
+    23e4:	48 83 e7 f8          	and    rdi,0xfffffffffffffff8
+    23e8:	48 c7 00 00 00 00 00 	mov    QWORD PTR [rax],0x0
+    23ef:	48 c7 80 f8 03 00 00 	mov    QWORD PTR [rax+0x3f8],0x0
+    23f6:	00 00 00 00 
+    23fa:	48 29 f8             	sub    rax,rdi
+    23fd:	48 89 c1             	mov    rcx,rax
+    2400:	31 c0                	xor    eax,eax
+    2402:	81 c1 00 04 00 00    	add    ecx,0x400
+    2408:	c1 e9 03             	shr    ecx,0x3
+    240b:	f3 48 ab             	rep stos QWORD PTR es:[rdi],rax
+  auto arr        = new array();
+    240e:	bf 18 00 00 00       	mov    edi,0x18
+    2413:	e8 c8 fc ff ff       	call   20e0 <_Znwm@plt>
+  auto arr_sorted = new array();
+    2418:	bf 18 00 00 00       	mov    edi,0x18
+    this->size = size;
+  }
+
+  array()
+  {
+    this->ptr  = NULL;
+    241d:	48 c7 00 00 00 00 00 	mov    QWORD PTR [rax],0x0
+    this->size = 0;
+    2424:	48 c7 40 08 00 00 00 	mov    QWORD PTR [rax+0x8],0x0
+    242b:	00 
+  auto arr        = new array();
+    242c:	48 89 44 24 08       	mov    QWORD PTR [rsp+0x8],rax
+  auto arr_sorted = new array();
+    2431:	e8 aa fc ff ff       	call   20e0 <_Znwm@plt>
+  auto sort       = new sorting();
+    2436:	bf 18 00 00 00       	mov    edi,0x18
+    this->ptr  = NULL;
+    243b:	48 c7 00 00 00 00 00 	mov    QWORD PTR [rax],0x0
+    this->size = 0;
+    2442:	48 c7 40 08 00 00 00 	mov    QWORD PTR [rax+0x8],0x0
+    2449:	00 
+  auto arr_sorted = new array();
+    244a:	48 89 44 24 10       	mov    QWORD PTR [rsp+0x10],rax
+  auto sort       = new sorting();
+    244f:	e8 8c fc ff ff       	call   20e0 <_Znwm@plt>
+    2454:	48 89 44 24 20       	mov    QWORD PTR [rsp+0x20],rax
+    this->ptr  = NULL;
+    2459:	48 c7 00 00 00 00 00 	mov    QWORD PTR [rax],0x0
+    this->size = 0;
+    2460:	48 c7 40 08 00 00 00 	mov    QWORD PTR [rax+0x8],0x0
+    2467:	00 
+    2468:	eb 12                	jmp    247c <main+0xdc>
+    246a:	66 0f 1f 44 00 00    	nop    WORD PTR [rax+rax*1+0x0]
+    printf("\nWrong input, try again!\n");
+    2470:	48 8d 3d f8 1b 00 00 	lea    rdi,[rip+0x1bf8]        # 406f <_IO_stdin_used+0x6f>
+    2477:	e8 24 fd ff ff       	call   21a0 <puts@plt>
+  printf("\nChoose:\n");
+    247c:	4c 89 f7             	mov    rdi,r14
+    247f:	e8 1c fd ff ff       	call   21a0 <puts@plt>
+  printf("1. Load array from given file\n");
+    2484:	4c 89 ef             	mov    rdi,r13
+    2487:	e8 14 fd ff ff       	call   21a0 <puts@plt>
+  printf("2. Generate array with random numbers\n");
+    248c:	4c 89 e7             	mov    rdi,r12
+    248f:	e8 0c fd ff ff       	call   21a0 <puts@plt>
+  printf("3. Show last generated/loaded array\n");
+    2494:	48 89 ef             	mov    rdi,rbp
+    2497:	e8 04 fd ff ff       	call   21a0 <puts@plt>
+  printf("4. Run sorting algorithm\n");
+    249c:	48 89 df             	mov    rdi,rbx
+    249f:	e8 fc fc ff ff       	call   21a0 <puts@plt>
+  printf("5. Show sorted array\n");
+    24a4:	48 8d 3d 9d 1b 00 00 	lea    rdi,[rip+0x1b9d]        # 4048 <_IO_stdin_used+0x48>
+    24ab:	e8 f0 fc ff ff       	call   21a0 <puts@plt>
+  printf("6. Exit\n");
+    24b0:	48 8d 3d a6 1b 00 00 	lea    rdi,[rip+0x1ba6]        # 405d <_IO_stdin_used+0x5d>
+    24b7:	e8 e4 fc ff ff       	call   21a0 <puts@plt>
+  printf("\nInput:  ");
+    24bc:	48 8d 3d a2 1b 00 00 	lea    rdi,[rip+0x1ba2]        # 4065 <_IO_stdin_used+0x65>
+    24c3:	31 c0                	xor    eax,eax
+    24c5:	e8 76 fb ff ff       	call   2040 <printf@plt>
+
+/* Read a character from stdin.  */
+__STDIO_INLINE int
+getchar (void)
+{
+  return getc (stdin);
+    24ca:	48 8b 3d 3f 3c 00 00 	mov    rdi,QWORD PTR [rip+0x3c3f]        # 6110 <stdin@GLIBC_2.2.5>
+    24d1:	e8 9a fb ff ff       	call   2070 <getc@plt>
+  if(input < 49 || input > 54)
+    24d6:	44 8d 78 cf          	lea    r15d,[rax-0x31]
+    24da:	41 80 ff 05          	cmp    r15b,0x5
+    24de:	77 90                	ja     2470 <main+0xd0>
+    24e0:	48 8b 3d 29 3c 00 00 	mov    rdi,QWORD PTR [rip+0x3c29]        # 6110 <stdin@GLIBC_2.2.5>
+  while(true)
+  {
+    const int option = menu();
+    getchar(); // skip \n
+
+    switch(option)
+    24e7:	45 0f b6 ff          	movzx  r15d,r15b
+    24eb:	e8 80 fb ff ff       	call   2070 <getc@plt>
+    24f0:	48 8d 0d 61 1c 00 00 	lea    rcx,[rip+0x1c61]        # 4158 <_IO_stdin_used+0x158>
+    24f7:	4a 63 04 b9          	movsxd rax,DWORD PTR [rcx+r15*4]
+    24fb:	48 01 c8             	add    rax,rcx
+    24fe:	ff e0                	jmp    rax
+        sort->insertion_sort();
+      } break;
+
+      case '5':
+      {
+        arr_sorted->print();
+    2500:	48 8b 7c 24 10       	mov    rdi,QWORD PTR [rsp+0x10]
+    2505:	e8 d6 02 00 00       	call   27e0 <_ZN5array5printEv>
+      } break;
+    250a:	e9 6d ff ff ff       	jmp    247c <main+0xdc>
+    250f:	90                   	nop
+    size = another->size;
+    2510:	48 8b 44 24 08       	mov    rax,QWORD PTR [rsp+0x8]
+    2515:	48 8b 50 08          	mov    rdx,QWORD PTR [rax+0x8]
+    2519:	48 8b 44 24 10       	mov    rax,QWORD PTR [rsp+0x10]
+    if(ptr == NULL)
+    251e:	48 8b 38             	mov    rdi,QWORD PTR [rax]
+    size = another->size;
+    2521:	48 89 50 08          	mov    QWORD PTR [rax+0x8],rdx
+    2525:	49 89 d7             	mov    r15,rdx
+    if(ptr == NULL)
+    2528:	48 85 ff             	test   rdi,rdi
+    252b:	0f 84 7c 01 00 00    	je     26ad <main+0x30d>
+    else if(allocated_size < size)
+    2531:	48 39 50 10          	cmp    QWORD PTR [rax+0x10],rdx
+    2535:	0f 82 21 01 00 00    	jb     265c <main+0x2bc>
+    memcpy(ptr, another->ptr, another->size * sizeof(ARRAY_SPECIFIER));
+    253b:	48 8b 44 24 08       	mov    rax,QWORD PTR [rsp+0x8]
+    2540:	48 c1 e2 02          	shl    rdx,0x2
+    2544:	48 8b 30             	mov    rsi,QWORD PTR [rax]
+    2547:	e8 74 fb ff ff       	call   20c0 <memcpy@plt>
+    254c:	48 89 c7             	mov    rdi,rax
+  void insertion_sort();
+
+  // do shallow copy
+  void set_array(array* other)
+  {
+    this->arr.ptr  = other->ptr;
+    254f:	48 8b 44 24 20       	mov    rax,QWORD PTR [rsp+0x20]
+    2554:	48 89 38             	mov    QWORD PTR [rax],rdi
+        sort->insertion_sort();
+    2557:	48 89 c7             	mov    rdi,rax
+    this->arr.size = other->size;
+    255a:	4c 89 78 08          	mov    QWORD PTR [rax+0x8],r15
+    255e:	e8 dd 0a 00 00       	call   3040 <_ZN7sorting14insertion_sortEv>
+      } break;
+    2563:	e9 14 ff ff ff       	jmp    247c <main+0xdc>
+    2568:	0f 1f 84 00 00 00 00 	nop    DWORD PTR [rax+rax*1+0x0]
+    256f:	00 
+        if(arr->ptr == NULL)
+    2570:	48 8b 44 24 08       	mov    rax,QWORD PTR [rsp+0x8]
+    2575:	48 83 38 00          	cmp    QWORD PTR [rax],0x0
+    2579:	0f 84 50 01 00 00    	je     26cf <main+0x32f>
+    257f:	48 89 c7             	mov    rdi,rax
+        arr->print();
+    2582:	e8 59 02 00 00       	call   27e0 <_ZN5array5printEv>
+     } break;
+    2587:	e9 f0 fe ff ff       	jmp    247c <main+0xdc>
+    258c:	0f 1f 40 00          	nop    DWORD PTR [rax+0x0]
+        parser->get_filename();
+    2590:	4c 8b 7c 24 18       	mov    r15,QWORD PTR [rsp+0x18]
+    2595:	4c 89 ff             	mov    rdi,r15
+    2598:	e8 e3 02 00 00       	call   2880 <_ZN11file_parser12get_filenameEv>
+        parser->parse_format_file(arr);
+    259d:	48 8b 74 24 08       	mov    rsi,QWORD PTR [rsp+0x8]
+    25a2:	4c 89 ff             	mov    rdi,r15
+    25a5:	e8 46 03 00 00       	call   28f0 <_ZN11file_parser17parse_format_fileEP5array>
+      } break;
+    25aa:	e9 cd fe ff ff       	jmp    247c <main+0xdc>
+    25af:	90                   	nop
+  }
+
+  ~array()
+  {
+    delete[] this->ptr;
+    25b0:	48 8b 44 24 20       	mov    rax,QWORD PTR [rsp+0x20]
+    25b5:	48 8b 38             	mov    rdi,QWORD PTR [rax]
+    25b8:	48 85 ff             	test   rdi,rdi
+    25bb:	74 05                	je     25c2 <main+0x222>
+    25bd:	e8 8e fb ff ff       	call   2150 <_ZdaPv@plt>
+
+      case '6':
+      {
+        delete sort;
+    25c2:	48 8b 7c 24 20       	mov    rdi,QWORD PTR [rsp+0x20]
+    25c7:	be 18 00 00 00       	mov    esi,0x18
+    25cc:	e8 1f fb ff ff       	call   20f0 <_ZdlPvm@plt>
+    25d1:	48 8b 44 24 08       	mov    rax,QWORD PTR [rsp+0x8]
+    25d6:	48 8b 38             	mov    rdi,QWORD PTR [rax]
+    25d9:	48 85 ff             	test   rdi,rdi
+    25dc:	74 05                	je     25e3 <main+0x243>
+    25de:	e8 6d fb ff ff       	call   2150 <_ZdaPv@plt>
+        delete arr;
+    25e3:	48 8b 7c 24 08       	mov    rdi,QWORD PTR [rsp+0x8]
+    25e8:	be 18 00 00 00       	mov    esi,0x18
+    25ed:	e8 fe fa ff ff       	call   20f0 <_ZdlPvm@plt>
+    25f2:	48 8b 44 24 10       	mov    rax,QWORD PTR [rsp+0x10]
+    25f7:	48 8b 38             	mov    rdi,QWORD PTR [rax]
+    25fa:	48 85 ff             	test   rdi,rdi
+    25fd:	74 05                	je     2604 <main+0x264>
+    25ff:	e8 4c fb ff ff       	call   2150 <_ZdaPv@plt>
+        delete arr_sorted;
+    2604:	48 8b 7c 24 10       	mov    rdi,QWORD PTR [rsp+0x10]
+    2609:	be 18 00 00 00       	mov    esi,0x18
+    260e:	e8 dd fa ff ff       	call   20f0 <_ZdlPvm@plt>
+        delete parser;
+    2613:	48 8b 7c 24 18       	mov    rdi,QWORD PTR [rsp+0x18]
+    2618:	be 00 04 00 00       	mov    esi,0x400
+    261d:	e8 ce fa ff ff       	call   20f0 <_ZdlPvm@plt>
+        return 0;
+      } break;
+    }
+  }
+
+}
+    2622:	48 83 c4 38          	add    rsp,0x38
+    2626:	31 c0                	xor    eax,eax
+    2628:	5b                   	pop    rbx
+    2629:	5d                   	pop    rbp
+    262a:	41 5c                	pop    r12
+    262c:	41 5d                	pop    r13
+    262e:	41 5e                	pop    r14
+    2630:	41 5f                	pop    r15
+    2632:	c3                   	ret
+    2633:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+        parser->get_size(arr);
+    2638:	4c 8b 7c 24 18       	mov    r15,QWORD PTR [rsp+0x18]
+    263d:	48 8b 74 24 08       	mov    rsi,QWORD PTR [rsp+0x8]
+    2642:	4c 89 ff             	mov    rdi,r15
+    2645:	e8 66 02 00 00       	call   28b0 <_ZN11file_parser8get_sizeEP5array>
+        parser->parse_file(arr);
+    264a:	48 8b 74 24 08       	mov    rsi,QWORD PTR [rsp+0x8]
+    264f:	4c 89 ff             	mov    rdi,r15
+    2652:	e8 59 07 00 00       	call   2db0 <_ZN11file_parser10parse_fileEP5array>
+      } break;
+    2657:	e9 20 fe ff ff       	jmp    247c <main+0xdc>
+    265c:	48 89 54 24 28       	mov    QWORD PTR [rsp+0x28],rdx
+      delete[] ptr;
+    2661:	e8 ea fa ff ff       	call   2150 <_ZdaPv@plt>
+      ptr            = new ARRAY_SPECIFIER[size];
+    2666:	48 8b 54 24 28       	mov    rdx,QWORD PTR [rsp+0x28]
+    266b:	48 b8 fe ff ff ff ff 	movabs rax,0x1ffffffffffffffe
+    2672:	ff ff 1f 
+    2675:	48 39 d0             	cmp    rax,rdx
+    2678:	0f 82 a2 fb ff ff    	jb     2220 <main.cold>
+    267e:	48 8d 3c 95 00 00 00 	lea    rdi,[rdx*4+0x0]
+    2685:	00 
+    2686:	e8 a5 f9 ff ff       	call   2030 <_Znam@plt>
+      allocated_size = size;
+    268b:	48 8b 54 24 28       	mov    rdx,QWORD PTR [rsp+0x28]
+      ptr            = new ARRAY_SPECIFIER[size];
+    2690:	48 89 c7             	mov    rdi,rax
+    2693:	48 8b 44 24 10       	mov    rax,QWORD PTR [rsp+0x10]
+      allocated_size = size;
+    2698:	48 89 50 10          	mov    QWORD PTR [rax+0x10],rdx
+      ptr            = new ARRAY_SPECIFIER[size];
+    269c:	48 89 38             	mov    QWORD PTR [rax],rdi
+      allocated_size = size;
+    269f:	48 8b 44 24 08       	mov    rax,QWORD PTR [rsp+0x8]
+    26a4:	48 8b 50 08          	mov    rdx,QWORD PTR [rax+0x8]
+    26a8:	e9 8e fe ff ff       	jmp    253b <main+0x19b>
+      ptr            = new ARRAY_SPECIFIER[size];
+    26ad:	48 b8 fe ff ff ff ff 	movabs rax,0x1ffffffffffffffe
+    26b4:	ff ff 1f 
+    26b7:	48 39 d0             	cmp    rax,rdx
+    26ba:	0f 82 60 fb ff ff    	jb     2220 <main.cold>
+    26c0:	48 89 54 24 28       	mov    QWORD PTR [rsp+0x28],rdx
+    26c5:	48 8d 3c 95 00 00 00 	lea    rdi,[rdx*4+0x0]
+    26cc:	00 
+    26cd:	eb b7                	jmp    2686 <main+0x2e6>
+           printf("No loaded array!\n");
+    26cf:	48 8d 3d b2 19 00 00 	lea    rdi,[rip+0x19b2]        # 4088 <_IO_stdin_used+0x88>
+    26d6:	e8 c5 fa ff ff       	call   21a0 <puts@plt>
+           continue;
+    26db:	e9 9c fd ff ff       	jmp    247c <main+0xdc>
+
+00000000000026e0 <_start>:
+    26e0:	f3 0f 1e fa          	endbr64
+    26e4:	31 ed                	xor    ebp,ebp
+    26e6:	49 89 d1             	mov    r9,rdx
+    26e9:	5e                   	pop    rsi
+    26ea:	48 89 e2             	mov    rdx,rsp
+    26ed:	48 83 e4 f0          	and    rsp,0xfffffffffffffff0
+    26f1:	50                   	push   rax
+    26f2:	54                   	push   rsp
+    26f3:	45 31 c0             	xor    r8d,r8d
+    26f6:	31 c9                	xor    ecx,ecx
+    26f8:	48 8d 3d a1 fc ff ff 	lea    rdi,[rip+0xfffffffffffffca1]        # 23a0 <main>
+    26ff:	ff 15 c3 38 00 00    	call   QWORD PTR [rip+0x38c3]        # 5fc8 <__libc_start_main@GLIBC_2.34>
+    2705:	f4                   	hlt
+    2706:	66 2e 0f 1f 84 00 00 	cs nop WORD PTR [rax+rax*1+0x0]
+    270d:	00 00 00 
+    2710:	48 8d 3d f9 39 00 00 	lea    rdi,[rip+0x39f9]        # 6110 <stdin@GLIBC_2.2.5>
+    2717:	48 8d 05 f2 39 00 00 	lea    rax,[rip+0x39f2]        # 6110 <stdin@GLIBC_2.2.5>
+    271e:	48 39 f8             	cmp    rax,rdi
+    2721:	74 15                	je     2738 <_start+0x58>
+    2723:	48 8b 05 a6 38 00 00 	mov    rax,QWORD PTR [rip+0x38a6]        # 5fd0 <_ITM_deregisterTMCloneTable@Base>
+    272a:	48 85 c0             	test   rax,rax
+    272d:	74 09                	je     2738 <_start+0x58>
+    272f:	ff e0                	jmp    rax
+    2731:	0f 1f 80 00 00 00 00 	nop    DWORD PTR [rax+0x0]
+    2738:	c3                   	ret
+    2739:	0f 1f 80 00 00 00 00 	nop    DWORD PTR [rax+0x0]
+    2740:	48 8d 3d c9 39 00 00 	lea    rdi,[rip+0x39c9]        # 6110 <stdin@GLIBC_2.2.5>
+    2747:	48 8d 35 c2 39 00 00 	lea    rsi,[rip+0x39c2]        # 6110 <stdin@GLIBC_2.2.5>
+    274e:	48 29 fe             	sub    rsi,rdi
+    2751:	48 89 f0             	mov    rax,rsi
+    2754:	48 c1 ee 3f          	shr    rsi,0x3f
+    2758:	48 c1 f8 03          	sar    rax,0x3
+    275c:	48 01 c6             	add    rsi,rax
+    275f:	48 d1 fe             	sar    rsi,1
+    2762:	74 14                	je     2778 <_start+0x98>
+    2764:	48 8b 05 75 38 00 00 	mov    rax,QWORD PTR [rip+0x3875]        # 5fe0 <_ITM_registerTMCloneTable@Base>
+    276b:	48 85 c0             	test   rax,rax
+    276e:	74 08                	je     2778 <_start+0x98>
+    2770:	ff e0                	jmp    rax
+    2772:	66 0f 1f 44 00 00    	nop    WORD PTR [rax+rax*1+0x0]
+    2778:	c3                   	ret
+    2779:	0f 1f 80 00 00 00 00 	nop    DWORD PTR [rax+0x0]
+    2780:	f3 0f 1e fa          	endbr64
+    2784:	80 3d 8d 39 00 00 00 	cmp    BYTE PTR [rip+0x398d],0x0        # 6118 <stdin@GLIBC_2.2.5+0x8>
+    278b:	75 33                	jne    27c0 <_start+0xe0>
+    278d:	55                   	push   rbp
+    278e:	48 83 3d 2a 38 00 00 	cmp    QWORD PTR [rip+0x382a],0x0        # 5fc0 <__cxa_finalize@GLIBC_2.2.5>
+    2795:	00 
+    2796:	48 89 e5             	mov    rbp,rsp
+    2799:	74 0d                	je     27a8 <_start+0xc8>
+    279b:	48 8b 3d 5e 39 00 00 	mov    rdi,QWORD PTR [rip+0x395e]        # 6100 <__dso_handle>
+    27a2:	ff 15 18 38 00 00    	call   QWORD PTR [rip+0x3818]        # 5fc0 <__cxa_finalize@GLIBC_2.2.5>
+    27a8:	e8 63 ff ff ff       	call   2710 <_start+0x30>
+    27ad:	c6 05 64 39 00 00 01 	mov    BYTE PTR [rip+0x3964],0x1        # 6118 <stdin@GLIBC_2.2.5+0x8>
+    27b4:	5d                   	pop    rbp
+    27b5:	c3                   	ret
+    27b6:	66 2e 0f 1f 84 00 00 	cs nop WORD PTR [rax+rax*1+0x0]
+    27bd:	00 00 00 
+    27c0:	c3                   	ret
+    27c1:	66 66 2e 0f 1f 84 00 	data16 cs nop WORD PTR [rax+rax*1+0x0]
+    27c8:	00 00 00 00 
+    27cc:	0f 1f 40 00          	nop    DWORD PTR [rax+0x0]
+    27d0:	f3 0f 1e fa          	endbr64
+    27d4:	e9 67 ff ff ff       	jmp    2740 <_start+0x60>
+    27d9:	0f 1f 80 00 00 00 00 	nop    DWORD PTR [rax+0x0]
+
+00000000000027e0 <_ZN5array5printEv>:
+
+    27e0:	41 56                	push   r14
+    27e2:	49 89 fe             	mov    r14,rdi
+  auto arr        = new array();
+    27e5:	48 8d 3d ea 18 00 00 	lea    rdi,[rip+0x18ea]        # 40d6 <_IO_stdin_used+0xd6>
+
+    27ec:	41 55                	push   r13
+    27ee:	41 54                	push   r12
+    27f0:	55                   	push   rbp
+    27f1:	53                   	push   rbx
+  auto arr        = new array();
+    27f2:	e8 a9 f9 ff ff       	call   21a0 <puts@plt>
+  auto arr_sorted = new array();
+    27f7:	49 83 7e 08 00       	cmp    QWORD PTR [r14+0x8],0x0
+    27fc:	74 4b                	je     2849 <_ZN5array5printEv+0x69>
+    27fe:	31 db                	xor    ebx,ebx
+    2800:	4c 8d 2d fd 17 00 00 	lea    r13,[rip+0x17fd]        # 4004 <_IO_stdin_used+0x4>
+  while(true)
+    2807:	49 bc cd cc cc cc cc 	movabs r12,0xcccccccccccccccd
+    280e:	cc cc cc 
+    2811:	48 bd 99 99 99 99 99 	movabs rbp,0x1999999999999999
+    2818:	99 99 19 
+    281b:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+
+    2820:	49 8b 06             	mov    rax,QWORD PTR [r14]
+    2823:	4c 89 ef             	mov    rdi,r13
+    2826:	8b 34 98             	mov    esi,DWORD PTR [rax+rbx*4]
+    2829:	31 c0                	xor    eax,eax
+  while(true)
+    282b:	48 83 c3 01          	add    rbx,0x1
+
+    282f:	e8 0c f8 ff ff       	call   2040 <printf@plt>
+  while(true)
+    2834:	48 89 d8             	mov    rax,rbx
+    2837:	49 0f af c4          	imul   rax,r12
+    283b:	48 d1 c8             	ror    rax,1
+    283e:	48 39 c5             	cmp    rbp,rax
+    2841:	73 15                	jae    2858 <_ZN5array5printEv+0x78>
+  auto arr_sorted = new array();
+    2843:	49 3b 5e 08          	cmp    rbx,QWORD PTR [r14+0x8]
+    2847:	72 d7                	jb     2820 <_ZN5array5printEv+0x40>
+    getchar(); // skip \n
+    2849:	5b                   	pop    rbx
+    284a:	5d                   	pop    rbp
+    284b:	41 5c                	pop    r12
+    284d:	41 5d                	pop    r13
+    284f:	41 5e                	pop    r14
+    2851:	c3                   	ret
+    2852:	66 0f 1f 44 00 00    	nop    WORD PTR [rax+rax*1+0x0]
+  {
+    2858:	bf 0a 00 00 00       	mov    edi,0xa
+    285d:	e8 0e f9 ff ff       	call   2170 <putchar@plt>
+  auto arr_sorted = new array();
+    2862:	49 3b 5e 08          	cmp    rbx,QWORD PTR [r14+0x8]
+    2866:	72 b8                	jb     2820 <_ZN5array5printEv+0x40>
+    getchar(); // skip \n
+    2868:	5b                   	pop    rbx
+    2869:	5d                   	pop    rbp
+    286a:	41 5c                	pop    r12
+    286c:	41 5d                	pop    r13
+    286e:	41 5e                	pop    r14
+    2870:	c3                   	ret
+    2871:	66 2e 0f 1f 84 00 00 	cs nop WORD PTR [rax+rax*1+0x0]
+    2878:	00 00 00 
+    287b:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+
+0000000000002880 <_ZN11file_parser12get_filenameEv>:
+{
+    2880:	53                   	push   rbx
+  printf("File name (max length:" TO_STR(FILENAME_LENGTH) " ): ");
+    2881:	31 c0                	xor    eax,eax
+{
+    2883:	48 89 fb             	mov    rbx,rdi
+  printf("File name (max length:" TO_STR(FILENAME_LENGTH) " ): ");
+    2886:	48 8d 3d ab 18 00 00 	lea    rdi,[rip+0x18ab]        # 4138 <_IO_stdin_used+0x138>
+    288d:	e8 ae f7 ff ff       	call   2040 <printf@plt>
+  scanf("%s", filename);
+    2892:	48 89 de             	mov    rsi,rbx
+    2895:	48 8d 3d fd 17 00 00 	lea    rdi,[rip+0x17fd]        # 4099 <_IO_stdin_used+0x99>
+    289c:	31 c0                	xor    eax,eax
+    289e:	e8 1d f9 ff ff       	call   21c0 <__isoc23_scanf@plt>
+    28a3:	48 8b 3d 66 38 00 00 	mov    rdi,QWORD PTR [rip+0x3866]        # 6110 <stdin@GLIBC_2.2.5>
+}
+    28aa:	5b                   	pop    rbx
+    28ab:	e9 c0 f7 ff ff       	jmp    2070 <getc@plt>
+
+00000000000028b0 <_ZN11file_parser8get_sizeEP5array>:
+{
+    28b0:	53                   	push   rbx
+  printf("Input size of array: ");
+    28b1:	48 8d 3d e4 17 00 00 	lea    rdi,[rip+0x17e4]        # 409c <_IO_stdin_used+0x9c>
+{
+    28b8:	48 89 f3             	mov    rbx,rsi
+  printf("Input size of array: ");
+    28bb:	31 c0                	xor    eax,eax
+    28bd:	e8 7e f7 ff ff       	call   2040 <printf@plt>
+  scanf("%zu", &arr->size);
+    28c2:	48 8d 73 08          	lea    rsi,[rbx+0x8]
+    28c6:	48 8d 3d e5 17 00 00 	lea    rdi,[rip+0x17e5]        # 40b2 <_IO_stdin_used+0xb2>
+    28cd:	31 c0                	xor    eax,eax
+    28cf:	e8 ec f8 ff ff       	call   21c0 <__isoc23_scanf@plt>
+    28d4:	48 8b 3d 35 38 00 00 	mov    rdi,QWORD PTR [rip+0x3835]        # 6110 <stdin@GLIBC_2.2.5>
+}
+    28db:	5b                   	pop    rbx
+    28dc:	e9 8f f7 ff ff       	jmp    2070 <getc@plt>
+    28e1:	90                   	nop
+    28e2:	66 66 2e 0f 1f 84 00 	data16 cs nop WORD PTR [rax+rax*1+0x0]
+    28e9:	00 00 00 00 
+    28ed:	0f 1f 00             	nop    DWORD PTR [rax]
+
+00000000000028f0 <_ZN11file_parser17parse_format_fileEP5array>:
+{
+    28f0:	41 57                	push   r15
+    28f2:	41 56                	push   r14
+    28f4:	41 55                	push   r13
+    28f6:	49 89 f5             	mov    r13,rsi
+    28f9:	41 54                	push   r12
+    28fb:	55                   	push   rbp
+    28fc:	53                   	push   rbx
+    28fd:	48 89 fb             	mov    rbx,rdi
+    2900:	48 81 ec 48 03 00 00 	sub    rsp,0x348
+    2907:	64 48 8b 04 25 28 00 	mov    rax,QWORD PTR fs:0x28
+    290e:	00 00 
+    2910:	48 89 84 24 38 03 00 	mov    QWORD PTR [rsp+0x338],rax
+    2917:	00 
+    2918:	31 c0                	xor    eax,eax
+       *  The default constructor does nothing and is not normally
+       *  accessible to users.
+      */
+      basic_ios()
+      : ios_base(), _M_tie(0), _M_fill(char_type()), _M_fill_init(false), 
+	_M_streambuf(0), _M_ctype(0), _M_num_put(0), _M_num_get(0)
+    291a:	48 8d ac 24 20 01 00 	lea    rbp,[rsp+0x120]
+    2921:	00 
+    2922:	4c 8d 74 24 20       	lea    r14,[rsp+0x20]
+    2927:	48 89 ef             	mov    rdi,rbp
+    292a:	48 89 6c 24 08       	mov    QWORD PTR [rsp+0x8],rbp
+    292f:	e8 4c f7 ff ff       	call   2080 <_ZNSt8ios_baseC2Ev@plt>
+      seekg(off_type, ios_base::seekdir);
+      ///@}
+
+    protected:
+      basic_istream()
+      : _M_gcount(streamsize(0))
+    2934:	4c 8b 3d 5d 34 00 00 	mov    r15,QWORD PTR [rip+0x345d]        # 5d98 <_ZTTSt14basic_ifstreamIcSt11char_traitsIcEE@GLIBCXX_3.4+0x8>
+      : ios_base(), _M_tie(0), _M_fill(char_type()), _M_fill_init(false), 
+    293b:	31 ff                	xor    edi,edi
+	_M_streambuf(0), _M_ctype(0), _M_num_put(0), _M_num_get(0)
+    293d:	66 0f ef c0          	pxor   xmm0,xmm0
+    2941:	48 8d 05 e8 32 00 00 	lea    rax,[rip+0x32e8]        # 5c30 <_ZTVSt9basic_iosIcSt11char_traitsIcEE@GLIBCXX_3.4+0x10>
+      : ios_base(), _M_tie(0), _M_fill(char_type()), _M_fill_init(false), 
+    2948:	66 89 bc 24 00 02 00 	mov    WORD PTR [rsp+0x200],di
+    294f:	00 
+    2950:	48 8b 35 49 34 00 00 	mov    rsi,QWORD PTR [rip+0x3449]        # 5da0 <_ZTTSt14basic_ifstreamIcSt11char_traitsIcEE@GLIBCXX_3.4+0x10>
+	_M_streambuf(0), _M_ctype(0), _M_num_put(0), _M_num_get(0)
+    2957:	0f 11 84 24 08 02 00 	movups XMMWORD PTR [rsp+0x208],xmm0
+    295e:	00 
+    295f:	0f 11 84 24 18 02 00 	movups XMMWORD PTR [rsp+0x218],xmm0
+    2966:	00 
+    2967:	48 89 84 24 20 01 00 	mov    QWORD PTR [rsp+0x120],rax
+    296e:	00 
+    296f:	49 8b 47 e8          	mov    rax,QWORD PTR [r15-0x18]
+      : ios_base(), _M_tie(0), _M_fill(char_type()), _M_fill_init(false), 
+    2973:	48 c7 84 24 f8 01 00 	mov    QWORD PTR [rsp+0x1f8],0x0
+    297a:	00 00 00 00 00 
+    297f:	4c 89 7c 24 20       	mov    QWORD PTR [rsp+0x20],r15
+    2984:	48 89 74 04 20       	mov    QWORD PTR [rsp+rax*1+0x20],rsi
+      { this->init(0); }
+    2989:	31 f6                	xor    esi,esi
+      : _M_gcount(streamsize(0))
+    298b:	48 c7 44 24 28 00 00 	mov    QWORD PTR [rsp+0x28],0x0
+    2992:	00 00 
+      { this->init(0); }
+    2994:	49 8b 7f e8          	mov    rdi,QWORD PTR [r15-0x18]
+    2998:	4c 01 f7             	add    rdi,r14
+    299b:	e8 c0 f7 ff ff       	call   2160 <_ZNSt9basic_iosIcSt11char_traitsIcEE4initEPSt15basic_streambufIcS1_E@plt>
+      basic_ifstream() : __istream_type(), _M_filebuf()
+    29a0:	48 8d 05 31 33 00 00 	lea    rax,[rip+0x3331]        # 5cd8 <_ZTVSt14basic_ifstreamIcSt11char_traitsIcEE@GLIBCXX_3.4+0x18>
+    29a7:	48 89 44 24 20       	mov    QWORD PTR [rsp+0x20],rax
+    29ac:	48 83 c0 28          	add    rax,0x28
+    29b0:	48 89 84 24 20 01 00 	mov    QWORD PTR [rsp+0x120],rax
+    29b7:	00 
+    29b8:	48 8d 44 24 30       	lea    rax,[rsp+0x30]
+    29bd:	48 89 c7             	mov    rdi,rax
+    29c0:	48 89 04 24          	mov    QWORD PTR [rsp],rax
+    29c4:	49 89 c4             	mov    r12,rax
+    29c7:	e8 34 f7 ff ff       	call   2100 <_ZNSt13basic_filebufIcSt11char_traitsIcEEC1Ev@plt>
+      { this->init(&_M_filebuf); }
+    29cc:	4c 89 e6             	mov    rsi,r12
+    29cf:	48 89 ef             	mov    rdi,rbp
+    29d2:	e8 89 f7 ff ff       	call   2160 <_ZNSt9basic_iosIcSt11char_traitsIcEE4initEPSt15basic_streambufIcS1_E@plt>
+       *  fails, @c failbit is set in the stream's error state.
+       */
+      void
+      open(const char* __s, ios_base::openmode __mode = ios_base::in)
+      {
+	if (!_M_filebuf.open(__s, __mode | ios_base::in))
+    29d7:	48 8b 3c 24          	mov    rdi,QWORD PTR [rsp]
+    29db:	ba 08 00 00 00       	mov    edx,0x8
+    29e0:	48 89 de             	mov    rsi,rbx
+    29e3:	e8 e8 f6 ff ff       	call   20d0 <_ZNSt13basic_filebufIcSt11char_traitsIcEE4openEPKcSt13_Ios_Openmode@plt>
+	  this->setstate(ios_base::failbit);
+    29e8:	48 8b 54 24 20       	mov    rdx,QWORD PTR [rsp+0x20]
+    29ed:	48 8b 7a e8          	mov    rdi,QWORD PTR [rdx-0x18]
+    29f1:	4c 01 f7             	add    rdi,r14
+	if (!_M_filebuf.open(__s, __mode | ios_base::in))
+    29f4:	48 85 c0             	test   rax,rax
+    29f7:	0f 84 eb 02 00 00    	je     2ce8 <_ZN11file_parser17parse_format_fileEP5array+0x3f8>
+	else
+	  // _GLIBCXX_RESOLVE_LIB_DEFECTS
+	  // 409. Closing an fstream should clear error state
+	  this->clear();
+    29fd:	31 f6                	xor    esi,esi
+    29ff:	e8 dc f7 ff ff       	call   21e0 <_ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate@plt>
+  if(!file.good())
+    2a04:	8b 8c 24 40 01 00 00 	mov    ecx,DWORD PTR [rsp+0x140]
+    2a0b:	85 c9                	test   ecx,ecx
+    2a0d:	0f 85 85 02 00 00    	jne    2c98 <_ZN11file_parser17parse_format_fileEP5array+0x3a8>
+  memset(buffer, 0, READ_BUFFER_SIZE);
+    2a13:	48 8d 9c 24 30 02 00 	lea    rbx,[rsp+0x230]
+    2a1a:	00 
+    2a1b:	31 c0                	xor    eax,eax
+    2a1d:	b9 1f 00 00 00       	mov    ecx,0x1f
+    2a22:	31 d2                	xor    edx,edx
+  size_t size = 0;
+    2a24:	48 c7 44 24 18 00 00 	mov    QWORD PTR [rsp+0x18],0x0
+    2a2b:	00 00 
+  memset(buffer, 0, READ_BUFFER_SIZE);
+    2a2d:	48 89 df             	mov    rdi,rbx
+    2a30:	f3 48 ab             	rep stos QWORD PTR es:[rdi],rax
+      { return this->getline(__s, __n, this->widen('\n')); }
+    2a33:	48 8b 44 24 20       	mov    rax,QWORD PTR [rsp+0x20]
+    2a38:	c7 07 00 00 00 00    	mov    DWORD PTR [rdi],0x0
+    2a3e:	48 83 c7 04          	add    rdi,0x4
+    2a42:	66 89 17             	mov    WORD PTR [rdi],dx
+    2a45:	c6 47 02 00          	mov    BYTE PTR [rdi+0x2],0x0
+      getline(char_type* __s, streamsize __n)
+    2a49:	48 8b 40 e8          	mov    rax,QWORD PTR [rax-0x18]
+    2a4d:	48 8b ac 04 10 01 00 	mov    rbp,QWORD PTR [rsp+rax*1+0x110]
+    2a54:	00 
+      if (!__f)
+    2a55:	48 85 ed             	test   rbp,rbp
+    2a58:	0f 84 f7 02 00 00    	je     2d55 <_ZN11file_parser17parse_format_fileEP5array+0x465>
+       *  @return  The converted character.
+      */
+      char_type
+      widen(char __c) const
+      {
+	if (_M_widen_ok)
+    2a5e:	80 7d 38 00          	cmp    BYTE PTR [rbp+0x38],0x0
+    2a62:	0f 84 30 01 00 00    	je     2b98 <_ZN11file_parser17parse_format_fileEP5array+0x2a8>
+      { return this->getline(__s, __n, this->widen('\n')); }
+    2a68:	0f be 4d 43          	movsx  ecx,BYTE PTR [rbp+0x43]
+    2a6c:	ba ff 00 00 00       	mov    edx,0xff
+    2a71:	48 89 de             	mov    rsi,rbx
+    2a74:	4c 89 f7             	mov    rdi,r14
+    2a77:	e8 94 f7 ff ff       	call   2210 <_ZNSi7getlineEPclc@plt>
+  sscanf(buffer, "%zu\n", &size);
+    2a7c:	48 89 df             	mov    rdi,rbx
+    2a7f:	48 8d 54 24 18       	lea    rdx,[rsp+0x18]
+    2a84:	48 8d 35 44 16 00 00 	lea    rsi,[rip+0x1644]        # 40cf <_IO_stdin_used+0xcf>
+    2a8b:	31 c0                	xor    eax,eax
+    2a8d:	e8 0e f6 ff ff       	call   20a0 <__isoc23_sscanf@plt>
+  if(ar->ptr != NULL)
+    2a92:	49 8b 7d 00          	mov    rdi,QWORD PTR [r13+0x0]
+    2a96:	48 85 ff             	test   rdi,rdi
+    2a99:	74 05                	je     2aa0 <_ZN11file_parser17parse_format_fileEP5array+0x1b0>
+    delete[] ar->ptr;
+    2a9b:	e8 b0 f6 ff ff       	call   2150 <_ZdaPv@plt>
+  ar->ptr = new ARRAY_SPECIFIER[size];
+    2aa0:	48 b8 fe ff ff ff ff 	movabs rax,0x1ffffffffffffffe
+    2aa7:	ff ff 1f 
+    2aaa:	48 8b 7c 24 18       	mov    rdi,QWORD PTR [rsp+0x18]
+    2aaf:	48 39 f8             	cmp    rax,rdi
+    2ab2:	0f 82 db f7 ff ff    	jb     2293 <_ZN11file_parser17parse_format_fileEP5array.cold+0x6d>
+    2ab8:	48 c1 e7 02          	shl    rdi,0x2
+    2abc:	e8 6f f5 ff ff       	call   2030 <_Znam@plt>
+    2ac1:	49 89 45 00          	mov    QWORD PTR [r13+0x0],rax
+  ar->size = size;
+    2ac5:	48 8b 44 24 18       	mov    rax,QWORD PTR [rsp+0x18]
+  while(!file.eof())
+    2aca:	45 31 e4             	xor    r12d,r12d
+  ar->size = size;
+    2acd:	49 89 45 08          	mov    QWORD PTR [r13+0x8],rax
+  while(!file.eof())
+    2ad1:	f6 84 24 40 01 00 00 	test   BYTE PTR [rsp+0x140],0x2
+    2ad8:	02 
+    2ad9:	74 43                	je     2b1e <_ZN11file_parser17parse_format_fileEP5array+0x22e>
+    2adb:	e9 f0 00 00 00       	jmp    2bd0 <_ZN11file_parser17parse_format_fileEP5array+0x2e0>
+    2ae0:	0f be 4d 43          	movsx  ecx,BYTE PTR [rbp+0x43]
+    2ae4:	ba ff 00 00 00       	mov    edx,0xff
+    2ae9:	48 89 de             	mov    rsi,rbx
+    2aec:	4c 89 f7             	mov    rdi,r14
+    2aef:	e8 1c f7 ff ff       	call   2210 <_ZNSi7getlineEPclc@plt>
+    sscanf(buffer, "%u\n", &ar->ptr[i]);
+    2af4:	49 8b 55 00          	mov    rdx,QWORD PTR [r13+0x0]
+    2af8:	48 8d 35 d5 15 00 00 	lea    rsi,[rip+0x15d5]        # 40d4 <_IO_stdin_used+0xd4>
+    2aff:	48 89 df             	mov    rdi,rbx
+    2b02:	31 c0                	xor    eax,eax
+    2b04:	4c 01 e2             	add    rdx,r12
+  while(!file.eof())
+    2b07:	49 83 c4 04          	add    r12,0x4
+    sscanf(buffer, "%u\n", &ar->ptr[i]);
+    2b0b:	e8 90 f5 ff ff       	call   20a0 <__isoc23_sscanf@plt>
+  while(!file.eof())
+    2b10:	f6 84 24 40 01 00 00 	test   BYTE PTR [rsp+0x140],0x2
+    2b17:	02 
+    2b18:	0f 85 b2 00 00 00    	jne    2bd0 <_ZN11file_parser17parse_format_fileEP5array+0x2e0>
+    memset(buffer, 0, READ_BUFFER_SIZE);
+    2b1e:	31 c0                	xor    eax,eax
+    2b20:	b9 1f 00 00 00       	mov    ecx,0x1f
+    2b25:	48 89 df             	mov    rdi,rbx
+    2b28:	f3 48 ab             	rep stos QWORD PTR es:[rdi],rax
+    2b2b:	31 c0                	xor    eax,eax
+    2b2d:	c7 07 00 00 00 00    	mov    DWORD PTR [rdi],0x0
+    2b33:	48 83 c7 04          	add    rdi,0x4
+    2b37:	66 89 07             	mov    WORD PTR [rdi],ax
+    2b3a:	48 8b 44 24 20       	mov    rax,QWORD PTR [rsp+0x20]
+    2b3f:	c6 47 02 00          	mov    BYTE PTR [rdi+0x2],0x0
+      getline(char_type* __s, streamsize __n)
+    2b43:	48 8b 40 e8          	mov    rax,QWORD PTR [rax-0x18]
+    2b47:	48 8b ac 04 10 01 00 	mov    rbp,QWORD PTR [rsp+rax*1+0x110]
+    2b4e:	00 
+    2b4f:	48 85 ed             	test   rbp,rbp
+    2b52:	0f 84 e0 01 00 00    	je     2d38 <_ZN11file_parser17parse_format_fileEP5array+0x448>
+    2b58:	80 7d 38 00          	cmp    BYTE PTR [rbp+0x38],0x0
+    2b5c:	75 82                	jne    2ae0 <_ZN11file_parser17parse_format_fileEP5array+0x1f0>
+	  return _M_widen[static_cast<unsigned char>(__c)];
+	this->_M_widen_init();
+    2b5e:	48 89 ef             	mov    rdi,rbp
+    2b61:	e8 ba f5 ff ff       	call   2120 <_ZNKSt5ctypeIcE13_M_widen_initEv@plt>
+	return this->do_widen(__c);
+    2b66:	48 8b 45 00          	mov    rax,QWORD PTR [rbp+0x0]
+    2b6a:	48 8d 35 bf 04 00 00 	lea    rsi,[rip+0x4bf]        # 3030 <_ZNKSt5ctypeIcE8do_widenEc>
+    2b71:	b9 0a 00 00 00       	mov    ecx,0xa
+    2b76:	48 8b 40 30          	mov    rax,QWORD PTR [rax+0x30]
+    2b7a:	48 39 f0             	cmp    rax,rsi
+    2b7d:	0f 84 61 ff ff ff    	je     2ae4 <_ZN11file_parser17parse_format_fileEP5array+0x1f4>
+    2b83:	be 0a 00 00 00       	mov    esi,0xa
+    2b88:	48 89 ef             	mov    rdi,rbp
+    2b8b:	ff d0                	call   rax
+      { return this->getline(__s, __n, this->widen('\n')); }
+    2b8d:	0f be c8             	movsx  ecx,al
+    2b90:	e9 4f ff ff ff       	jmp    2ae4 <_ZN11file_parser17parse_format_fileEP5array+0x1f4>
+    2b95:	0f 1f 00             	nop    DWORD PTR [rax]
+	this->_M_widen_init();
+    2b98:	48 89 ef             	mov    rdi,rbp
+    2b9b:	e8 80 f5 ff ff       	call   2120 <_ZNKSt5ctypeIcE13_M_widen_initEv@plt>
+	return this->do_widen(__c);
+    2ba0:	48 8b 45 00          	mov    rax,QWORD PTR [rbp+0x0]
+    2ba4:	48 8d 15 85 04 00 00 	lea    rdx,[rip+0x485]        # 3030 <_ZNKSt5ctypeIcE8do_widenEc>
+    2bab:	b9 0a 00 00 00       	mov    ecx,0xa
+    2bb0:	48 8b 40 30          	mov    rax,QWORD PTR [rax+0x30]
+    2bb4:	48 39 d0             	cmp    rax,rdx
+    2bb7:	0f 84 af fe ff ff    	je     2a6c <_ZN11file_parser17parse_format_fileEP5array+0x17c>
+    2bbd:	be 0a 00 00 00       	mov    esi,0xa
+    2bc2:	48 89 ef             	mov    rdi,rbp
+    2bc5:	ff d0                	call   rax
+    2bc7:	0f be c8             	movsx  ecx,al
+    2bca:	e9 9d fe ff ff       	jmp    2a6c <_ZN11file_parser17parse_format_fileEP5array+0x17c>
+    2bcf:	90                   	nop
+       *  fails, @c failbit is set in the stream's error state.
+       */
+      void
+      close()
+      {
+	if (!_M_filebuf.close())
+    2bd0:	48 8b 3c 24          	mov    rdi,QWORD PTR [rsp]
+    2bd4:	e8 77 f4 ff ff       	call   2050 <_ZNSt13basic_filebufIcSt11char_traitsIcEE5closeEv@plt>
+    2bd9:	48 85 c0             	test   rax,rax
+    2bdc:	0f 84 1e 01 00 00    	je     2d00 <_ZN11file_parser17parse_format_fileEP5array+0x410>
+      { }
+    2be2:	48 8d 05 ef 30 00 00 	lea    rax,[rip+0x30ef]        # 5cd8 <_ZTVSt14basic_ifstreamIcSt11char_traitsIcEE@GLIBCXX_3.4+0x18>
+	  { this->close(); }
+    2be9:	48 8b 3c 24          	mov    rdi,QWORD PTR [rsp]
+      { }
+    2bed:	48 89 44 24 20       	mov    QWORD PTR [rsp+0x20],rax
+    2bf2:	48 83 c0 28          	add    rax,0x28
+    2bf6:	48 89 84 24 20 01 00 	mov    QWORD PTR [rsp+0x120],rax
+    2bfd:	00 
+      }
+    2bfe:	48 8d 05 1b 31 00 00 	lea    rax,[rip+0x311b]        # 5d20 <_ZTVSt13basic_filebufIcSt11char_traitsIcEE@GLIBCXX_3.4+0x10>
+    2c05:	48 89 44 24 30       	mov    QWORD PTR [rsp+0x30],rax
+	  { this->close(); }
+    2c0a:	e8 41 f4 ff ff       	call   2050 <_ZNSt13basic_filebufIcSt11char_traitsIcEE5closeEv@plt>
+      }
+    2c0f:	48 8d bc 24 98 00 00 	lea    rdi,[rsp+0x98]
+    2c16:	00 
+    2c17:	e8 e4 f5 ff ff       	call   2200 <_ZNSt12__basic_fileIcED1Ev@plt>
+
+  public:
+      /// Destructor deallocates no buffer space.
+      virtual
+      ~basic_streambuf()
+      { }
+    2c1c:	48 8d 05 2d 30 00 00 	lea    rax,[rip+0x302d]        # 5c50 <_ZTVSt15basic_streambufIcSt11char_traitsIcEE@GLIBCXX_3.4+0x10>
+    2c23:	48 8d 7c 24 68       	lea    rdi,[rsp+0x68]
+    2c28:	48 89 44 24 30       	mov    QWORD PTR [rsp+0x30],rax
+    2c2d:	e8 4e f5 ff ff       	call   2180 <_ZNSt6localeD1Ev@plt>
+      { _M_gcount = streamsize(0); }
+    2c32:	49 8b 47 e8          	mov    rax,QWORD PTR [r15-0x18]
+      ~basic_ios() { }
+    2c36:	48 8b 7c 24 08       	mov    rdi,QWORD PTR [rsp+0x8]
+    2c3b:	4c 89 7c 24 20       	mov    QWORD PTR [rsp+0x20],r15
+    2c40:	48 8b 1d 59 31 00 00 	mov    rbx,QWORD PTR [rip+0x3159]        # 5da0 <_ZTTSt14basic_ifstreamIcSt11char_traitsIcEE@GLIBCXX_3.4+0x10>
+    2c47:	48 89 5c 04 20       	mov    QWORD PTR [rsp+rax*1+0x20],rbx
+    2c4c:	48 8d 05 dd 2f 00 00 	lea    rax,[rip+0x2fdd]        # 5c30 <_ZTVSt9basic_iosIcSt11char_traitsIcEE@GLIBCXX_3.4+0x10>
+    2c53:	48 89 84 24 20 01 00 	mov    QWORD PTR [rsp+0x120],rax
+    2c5a:	00 
+    2c5b:	48 c7 44 24 28 00 00 	mov    QWORD PTR [rsp+0x28],0x0
+    2c62:	00 00 
+    2c64:	e8 27 f4 ff ff       	call   2090 <_ZNSt8ios_baseD2Ev@plt>
+}
+    2c69:	48 8b 84 24 38 03 00 	mov    rax,QWORD PTR [rsp+0x338]
+    2c70:	00 
+    2c71:	64 48 2b 04 25 28 00 	sub    rax,QWORD PTR fs:0x28
+    2c78:	00 00 
+    2c7a:	0f 85 d0 00 00 00    	jne    2d50 <_ZN11file_parser17parse_format_fileEP5array+0x460>
+    2c80:	48 81 c4 48 03 00 00 	add    rsp,0x348
+    2c87:	5b                   	pop    rbx
+    2c88:	5d                   	pop    rbp
+    2c89:	41 5c                	pop    r12
+    2c8b:	41 5d                	pop    r13
+    2c8d:	41 5e                	pop    r14
+    2c8f:	41 5f                	pop    r15
+    2c91:	c3                   	ret
+    2c92:	66 0f 1f 44 00 00    	nop    WORD PTR [rax+rax*1+0x0]
+    printf("Bad filename! Try again!\n");
+    2c98:	48 8d 3d 17 14 00 00 	lea    rdi,[rip+0x1417]        # 40b6 <_IO_stdin_used+0xb6>
+    2c9f:	e8 fc f4 ff ff       	call   21a0 <puts@plt>
+	if (!_M_filebuf.close())
+    2ca4:	48 8b 3c 24          	mov    rdi,QWORD PTR [rsp]
+    2ca8:	e8 a3 f3 ff ff       	call   2050 <_ZNSt13basic_filebufIcSt11char_traitsIcEE5closeEv@plt>
+    2cad:	48 85 c0             	test   rax,rax
+    2cb0:	74 6a                	je     2d1c <_ZN11file_parser17parse_format_fileEP5array+0x42c>
+      { }
+    2cb2:	48 8d 05 1f 30 00 00 	lea    rax,[rip+0x301f]        # 5cd8 <_ZTVSt14basic_ifstreamIcSt11char_traitsIcEE@GLIBCXX_3.4+0x18>
+	  { this->close(); }
+    2cb9:	48 8b 3c 24          	mov    rdi,QWORD PTR [rsp]
+      { }
+    2cbd:	48 89 44 24 20       	mov    QWORD PTR [rsp+0x20],rax
+    2cc2:	48 83 c0 28          	add    rax,0x28
+    2cc6:	48 89 84 24 20 01 00 	mov    QWORD PTR [rsp+0x120],rax
+    2ccd:	00 
+      }
+    2cce:	48 8d 05 4b 30 00 00 	lea    rax,[rip+0x304b]        # 5d20 <_ZTVSt13basic_filebufIcSt11char_traitsIcEE@GLIBCXX_3.4+0x10>
+    2cd5:	48 89 44 24 30       	mov    QWORD PTR [rsp+0x30],rax
+	  { this->close(); }
+    2cda:	e8 71 f3 ff ff       	call   2050 <_ZNSt13basic_filebufIcSt11char_traitsIcEE5closeEv@plt>
+    2cdf:	e9 2b ff ff ff       	jmp    2c0f <_ZN11file_parser17parse_format_fileEP5array+0x31f>
+    2ce4:	0f 1f 40 00          	nop    DWORD PTR [rax+0x0]
+  operator&(_Ios_Iostate __a, _Ios_Iostate __b)
+  { return _Ios_Iostate(static_cast<int>(__a) & static_cast<int>(__b)); }
+
+  inline _GLIBCXX_CONSTEXPR _Ios_Iostate
+  operator|(_Ios_Iostate __a, _Ios_Iostate __b)
+  { return _Ios_Iostate(static_cast<int>(__a) | static_cast<int>(__b)); }
+    2ce8:	8b 77 20             	mov    esi,DWORD PTR [rdi+0x20]
+    2ceb:	83 ce 04             	or     esi,0x4
+      { this->clear(this->rdstate() | __state); }
+    2cee:	e8 ed f4 ff ff       	call   21e0 <_ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate@plt>
+    2cf3:	e9 0c fd ff ff       	jmp    2a04 <_ZN11file_parser17parse_format_fileEP5array+0x114>
+    2cf8:	0f 1f 84 00 00 00 00 	nop    DWORD PTR [rax+rax*1+0x0]
+    2cff:	00 
+	  this->setstate(ios_base::failbit);
+    2d00:	48 8b 44 24 20       	mov    rax,QWORD PTR [rsp+0x20]
+    2d05:	48 8b 78 e8          	mov    rdi,QWORD PTR [rax-0x18]
+    2d09:	4c 01 f7             	add    rdi,r14
+    2d0c:	8b 77 20             	mov    esi,DWORD PTR [rdi+0x20]
+    2d0f:	83 ce 04             	or     esi,0x4
+    2d12:	e8 c9 f4 ff ff       	call   21e0 <_ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate@plt>
+    2d17:	e9 c6 fe ff ff       	jmp    2be2 <_ZN11file_parser17parse_format_fileEP5array+0x2f2>
+    2d1c:	48 8b 44 24 20       	mov    rax,QWORD PTR [rsp+0x20]
+    2d21:	48 8b 78 e8          	mov    rdi,QWORD PTR [rax-0x18]
+    2d25:	4c 01 f7             	add    rdi,r14
+    2d28:	8b 77 20             	mov    esi,DWORD PTR [rdi+0x20]
+    2d2b:	83 ce 04             	or     esi,0x4
+    2d2e:	e8 ad f4 ff ff       	call   21e0 <_ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate@plt>
+    2d33:	e9 7a ff ff ff       	jmp    2cb2 <_ZN11file_parser17parse_format_fileEP5array+0x3c2>
+	__throw_bad_cast();
+    2d38:	48 8b 84 24 38 03 00 	mov    rax,QWORD PTR [rsp+0x338]
+    2d3f:	00 
+    2d40:	64 48 2b 04 25 28 00 	sub    rax,QWORD PTR fs:0x28
+    2d47:	00 00 
+    2d49:	75 22                	jne    2d6d <_ZN11file_parser17parse_format_fileEP5array+0x47d>
+    2d4b:	e8 f0 f3 ff ff       	call   2140 <_ZSt16__throw_bad_castv@plt>
+}
+    2d50:	e8 bb f3 ff ff       	call   2110 <__stack_chk_fail@plt>
+    2d55:	48 8b 84 24 38 03 00 	mov    rax,QWORD PTR [rsp+0x338]
+    2d5c:	00 
+    2d5d:	64 48 2b 04 25 28 00 	sub    rax,QWORD PTR fs:0x28
+    2d64:	00 00 
+    2d66:	75 0a                	jne    2d72 <_ZN11file_parser17parse_format_fileEP5array+0x482>
+    2d68:	e8 d3 f3 ff ff       	call   2140 <_ZSt16__throw_bad_castv@plt>
+    2d6d:	e8 9e f3 ff ff       	call   2110 <__stack_chk_fail@plt>
+    2d72:	e8 99 f3 ff ff       	call   2110 <__stack_chk_fail@plt>
+      { this->init(&_M_filebuf); }
+    2d77:	48 89 c3             	mov    rbx,rax
+    2d7a:	e9 a7 f4 ff ff       	jmp    2226 <_ZN11file_parser17parse_format_fileEP5array.cold>
+      ~basic_ios() { }
+    2d7f:	48 89 c3             	mov    rbx,rax
+    2d82:	e9 c4 f4 ff ff       	jmp    224b <_ZN11file_parser17parse_format_fileEP5array.cold+0x25>
+	__catch(...)
+    2d87:	48 89 c7             	mov    rdi,rax
+    2d8a:	e9 f0 f4 ff ff       	jmp    227f <_ZN11file_parser17parse_format_fileEP5array.cold+0x59>
+    2d8f:	48 89 c3             	mov    rbx,rax
+    2d92:	e9 98 f4 ff ff       	jmp    222f <_ZN11file_parser17parse_format_fileEP5array.cold+0x9>
+    2d97:	48 89 c7             	mov    rdi,rax
+    2d9a:	e9 0c f5 ff ff       	jmp    22ab <_ZN11file_parser17parse_format_fileEP5array.cold+0x85>
+    2d9f:	48 89 c3             	mov    rbx,rax
+    2da2:	e9 18 f5 ff ff       	jmp    22bf <_ZN11file_parser17parse_format_fileEP5array.cold+0x99>
+    2da7:	90                   	nop
+    2da8:	0f 1f 84 00 00 00 00 	nop    DWORD PTR [rax+rax*1+0x0]
+    2daf:	00 
+
+0000000000002db0 <_ZN11file_parser10parse_fileEP5array>:
+{
+    2db0:	41 57                	push   r15
+    2db2:	41 56                	push   r14
+    2db4:	41 55                	push   r13
+    2db6:	41 54                	push   r12
+    2db8:	55                   	push   rbp
+    2db9:	53                   	push   rbx
+    2dba:	48 89 f3             	mov    rbx,rsi
+    2dbd:	48 81 ec 18 02 00 00 	sub    rsp,0x218
+  if(arr->ptr != NULL)
+    2dc4:	48 8b 3e             	mov    rdi,QWORD PTR [rsi]
+{
+    2dc7:	64 48 8b 04 25 28 00 	mov    rax,QWORD PTR fs:0x28
+    2dce:	00 00 
+    2dd0:	48 89 84 24 08 02 00 	mov    QWORD PTR [rsp+0x208],rax
+    2dd7:	00 
+    2dd8:	31 c0                	xor    eax,eax
+  if(arr->ptr != NULL)
+    2dda:	48 85 ff             	test   rdi,rdi
+    2ddd:	74 05                	je     2de4 <_ZN11file_parser10parse_fileEP5array+0x34>
+    delete[] arr->ptr;
+    2ddf:	e8 6c f3 ff ff       	call   2150 <_ZdaPv@plt>
+  arr->ptr = new ARRAY_SPECIFIER[arr->size];
+    2de4:	48 b8 fe ff ff ff ff 	movabs rax,0x1ffffffffffffffe
+    2deb:	ff ff 1f 
+    2dee:	48 8b 7b 08          	mov    rdi,QWORD PTR [rbx+0x8]
+    2df2:	48 39 f8             	cmp    rax,rdi
+    2df5:	0f 82 f1 f4 ff ff    	jb     22ec <_ZN11file_parser10parse_fileEP5array.cold>
+    2dfb:	48 c1 e7 02          	shl    rdi,0x2
+	_M_streambuf(0), _M_ctype(0), _M_num_put(0), _M_num_get(0)
+    2dff:	4c 8d ac 24 00 01 00 	lea    r13,[rsp+0x100]
+    2e06:	00 
+    2e07:	4c 8d 3d 22 2e 00 00 	lea    r15,[rip+0x2e22]        # 5c30 <_ZTVSt9basic_iosIcSt11char_traitsIcEE@GLIBCXX_3.4+0x10>
+    2e0e:	49 89 e6             	mov    r14,rsp
+    2e11:	e8 1a f2 ff ff       	call   2030 <_Znam@plt>
+    2e16:	4c 89 ef             	mov    rdi,r13
+    2e19:	48 89 03             	mov    QWORD PTR [rbx],rax
+    2e1c:	e8 5f f2 ff ff       	call   2080 <_ZNSt8ios_baseC2Ev@plt>
+      : _M_gcount(streamsize(0))
+    2e21:	48 8b 2d 70 2f 00 00 	mov    rbp,QWORD PTR [rip+0x2f70]        # 5d98 <_ZTTSt14basic_ifstreamIcSt11char_traitsIcEE@GLIBCXX_3.4+0x8>
+      : ios_base(), _M_tie(0), _M_fill(char_type()), _M_fill_init(false), 
+    2e28:	31 c9                	xor    ecx,ecx
+      { this->init(0); }
+    2e2a:	31 f6                	xor    esi,esi
+	_M_streambuf(0), _M_ctype(0), _M_num_put(0), _M_num_get(0)
+    2e2c:	66 0f ef c0          	pxor   xmm0,xmm0
+      : ios_base(), _M_tie(0), _M_fill(char_type()), _M_fill_init(false), 
+    2e30:	66 89 8c 24 e0 01 00 	mov    WORD PTR [rsp+0x1e0],cx
+    2e37:	00 
+      : _M_gcount(streamsize(0))
+    2e38:	48 8b 0d 61 2f 00 00 	mov    rcx,QWORD PTR [rip+0x2f61]        # 5da0 <_ZTTSt14basic_ifstreamIcSt11char_traitsIcEE@GLIBCXX_3.4+0x10>
+	_M_streambuf(0), _M_ctype(0), _M_num_put(0), _M_num_get(0)
+    2e3f:	0f 11 84 24 e8 01 00 	movups XMMWORD PTR [rsp+0x1e8],xmm0
+    2e46:	00 
+    2e47:	0f 11 84 24 f8 01 00 	movups XMMWORD PTR [rsp+0x1f8],xmm0
+    2e4e:	00 
+    2e4f:	48 8b 45 e8          	mov    rax,QWORD PTR [rbp-0x18]
+    2e53:	4c 89 bc 24 00 01 00 	mov    QWORD PTR [rsp+0x100],r15
+    2e5a:	00 
+      : ios_base(), _M_tie(0), _M_fill(char_type()), _M_fill_init(false), 
+    2e5b:	48 c7 84 24 d8 01 00 	mov    QWORD PTR [rsp+0x1d8],0x0
+    2e62:	00 00 00 00 00 
+    2e67:	48 89 2c 24          	mov    QWORD PTR [rsp],rbp
+    2e6b:	48 89 0c 04          	mov    QWORD PTR [rsp+rax*1],rcx
+    2e6f:	48 c7 44 24 08 00 00 	mov    QWORD PTR [rsp+0x8],0x0
+    2e76:	00 00 
+      { this->init(0); }
+    2e78:	48 8b 7d e8          	mov    rdi,QWORD PTR [rbp-0x18]
+    2e7c:	4c 01 f7             	add    rdi,r14
+    2e7f:	e8 dc f2 ff ff       	call   2160 <_ZNSt9basic_iosIcSt11char_traitsIcEE4initEPSt15basic_streambufIcS1_E@plt>
+      basic_ifstream() : __istream_type(), _M_filebuf()
+    2e84:	48 8d 05 4d 2e 00 00 	lea    rax,[rip+0x2e4d]        # 5cd8 <_ZTVSt14basic_ifstreamIcSt11char_traitsIcEE@GLIBCXX_3.4+0x18>
+    2e8b:	4c 8d 64 24 10       	lea    r12,[rsp+0x10]
+    2e90:	48 89 04 24          	mov    QWORD PTR [rsp],rax
+    2e94:	4c 89 e7             	mov    rdi,r12
+    2e97:	48 83 c0 28          	add    rax,0x28
+    2e9b:	48 89 84 24 00 01 00 	mov    QWORD PTR [rsp+0x100],rax
+    2ea2:	00 
+    2ea3:	e8 58 f2 ff ff       	call   2100 <_ZNSt13basic_filebufIcSt11char_traitsIcEEC1Ev@plt>
+      { this->init(&_M_filebuf); }
+    2ea8:	4c 89 e6             	mov    rsi,r12
+    2eab:	4c 89 ef             	mov    rdi,r13
+    2eae:	e8 ad f2 ff ff       	call   2160 <_ZNSt9basic_iosIcSt11char_traitsIcEE4initEPSt15basic_streambufIcS1_E@plt>
+	if (!_M_filebuf.open(__s, __mode | ios_base::in))
+    2eb3:	ba 08 00 00 00       	mov    edx,0x8
+    2eb8:	48 8d 35 19 12 00 00 	lea    rsi,[rip+0x1219]        # 40d8 <_IO_stdin_used+0xd8>
+    2ebf:	4c 89 e7             	mov    rdi,r12
+    2ec2:	e8 09 f2 ff ff       	call   20d0 <_ZNSt13basic_filebufIcSt11char_traitsIcEE4openEPKcSt13_Ios_Openmode@plt>
+	  this->setstate(ios_base::failbit);
+    2ec7:	48 8b 14 24          	mov    rdx,QWORD PTR [rsp]
+    2ecb:	48 8b 7a e8          	mov    rdi,QWORD PTR [rdx-0x18]
+    2ecf:	4c 01 f7             	add    rdi,r14
+	if (!_M_filebuf.open(__s, __mode | ios_base::in))
+    2ed2:	48 85 c0             	test   rax,rax
+    2ed5:	0f 84 f5 00 00 00    	je     2fd0 <_ZN11file_parser10parse_fileEP5array+0x220>
+	  this->clear();
+    2edb:	31 f6                	xor    esi,esi
+    2edd:	e8 fe f2 ff ff       	call   21e0 <_ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate@plt>
+  if(!file.good())
+    2ee2:	8b 84 24 20 01 00 00 	mov    eax,DWORD PTR [rsp+0x120]
+    2ee9:	85 c0                	test   eax,eax
+    2eeb:	0f 85 c7 00 00 00    	jne    2fb8 <_ZN11file_parser10parse_fileEP5array+0x208>
+  file.read((char*)arr->ptr, arr->size * sizeof(ARRAY_SPECIFIER));
+    2ef1:	48 8b 43 08          	mov    rax,QWORD PTR [rbx+0x8]
+    2ef5:	48 8b 33             	mov    rsi,QWORD PTR [rbx]
+    2ef8:	4c 89 f7             	mov    rdi,r14
+    2efb:	48 8d 14 85 00 00 00 	lea    rdx,[rax*4+0x0]
+    2f02:	00 
+    2f03:	e8 28 f2 ff ff       	call   2130 <_ZNSi4readEPcl@plt>
+	if (!_M_filebuf.close())
+    2f08:	4c 89 e7             	mov    rdi,r12
+    2f0b:	e8 40 f1 ff ff       	call   2050 <_ZNSt13basic_filebufIcSt11char_traitsIcEE5closeEv@plt>
+    2f10:	48 85 c0             	test   rax,rax
+    2f13:	0f 84 c7 00 00 00    	je     2fe0 <_ZN11file_parser10parse_fileEP5array+0x230>
+      { }
+    2f19:	48 8d 05 b8 2d 00 00 	lea    rax,[rip+0x2db8]        # 5cd8 <_ZTVSt14basic_ifstreamIcSt11char_traitsIcEE@GLIBCXX_3.4+0x18>
+	  { this->close(); }
+    2f20:	4c 89 e7             	mov    rdi,r12
+      { }
+    2f23:	48 89 04 24          	mov    QWORD PTR [rsp],rax
+    2f27:	48 83 c0 28          	add    rax,0x28
+    2f2b:	48 89 84 24 00 01 00 	mov    QWORD PTR [rsp+0x100],rax
+    2f32:	00 
+      }
+    2f33:	48 8d 05 e6 2d 00 00 	lea    rax,[rip+0x2de6]        # 5d20 <_ZTVSt13basic_filebufIcSt11char_traitsIcEE@GLIBCXX_3.4+0x10>
+    2f3a:	48 89 44 24 10       	mov    QWORD PTR [rsp+0x10],rax
+	  { this->close(); }
+    2f3f:	e8 0c f1 ff ff       	call   2050 <_ZNSt13basic_filebufIcSt11char_traitsIcEE5closeEv@plt>
+      }
+    2f44:	48 8d 7c 24 78       	lea    rdi,[rsp+0x78]
+    2f49:	e8 b2 f2 ff ff       	call   2200 <_ZNSt12__basic_fileIcED1Ev@plt>
+    2f4e:	48 8d 05 fb 2c 00 00 	lea    rax,[rip+0x2cfb]        # 5c50 <_ZTVSt15basic_streambufIcSt11char_traitsIcEE@GLIBCXX_3.4+0x10>
+    2f55:	48 8d 7c 24 48       	lea    rdi,[rsp+0x48]
+    2f5a:	48 89 44 24 10       	mov    QWORD PTR [rsp+0x10],rax
+    2f5f:	e8 1c f2 ff ff       	call   2180 <_ZNSt6localeD1Ev@plt>
+      { _M_gcount = streamsize(0); }
+    2f64:	48 8b 45 e8          	mov    rax,QWORD PTR [rbp-0x18]
+      ~basic_ios() { }
+    2f68:	4c 89 ef             	mov    rdi,r13
+    2f6b:	48 89 2c 24          	mov    QWORD PTR [rsp],rbp
+    2f6f:	48 8b 0d 2a 2e 00 00 	mov    rcx,QWORD PTR [rip+0x2e2a]        # 5da0 <_ZTTSt14basic_ifstreamIcSt11char_traitsIcEE@GLIBCXX_3.4+0x10>
+    2f76:	48 89 0c 04          	mov    QWORD PTR [rsp+rax*1],rcx
+    2f7a:	48 c7 44 24 08 00 00 	mov    QWORD PTR [rsp+0x8],0x0
+    2f81:	00 00 
+    2f83:	4c 89 bc 24 00 01 00 	mov    QWORD PTR [rsp+0x100],r15
+    2f8a:	00 
+    2f8b:	e8 00 f1 ff ff       	call   2090 <_ZNSt8ios_baseD2Ev@plt>
+}
+    2f90:	48 8b 84 24 08 02 00 	mov    rax,QWORD PTR [rsp+0x208]
+    2f97:	00 
+    2f98:	64 48 2b 04 25 28 00 	sub    rax,QWORD PTR fs:0x28
+    2f9f:	00 00 
+    2fa1:	75 58                	jne    2ffb <_ZN11file_parser10parse_fileEP5array+0x24b>
+    2fa3:	48 81 c4 18 02 00 00 	add    rsp,0x218
+    2faa:	5b                   	pop    rbx
+    2fab:	5d                   	pop    rbp
+    2fac:	41 5c                	pop    r12
+    2fae:	41 5d                	pop    r13
+    2fb0:	41 5e                	pop    r14
+    2fb2:	41 5f                	pop    r15
+    2fb4:	c3                   	ret
+    2fb5:	0f 1f 00             	nop    DWORD PTR [rax]
+    printf("Bad filename! Try again!\n");
+    2fb8:	48 8d 3d f7 10 00 00 	lea    rdi,[rip+0x10f7]        # 40b6 <_IO_stdin_used+0xb6>
+    2fbf:	e8 dc f1 ff ff       	call   21a0 <puts@plt>
+    2fc4:	e9 3f ff ff ff       	jmp    2f08 <_ZN11file_parser10parse_fileEP5array+0x158>
+    2fc9:	0f 1f 80 00 00 00 00 	nop    DWORD PTR [rax+0x0]
+    2fd0:	8b 77 20             	mov    esi,DWORD PTR [rdi+0x20]
+    2fd3:	83 ce 04             	or     esi,0x4
+      { this->clear(this->rdstate() | __state); }
+    2fd6:	e8 05 f2 ff ff       	call   21e0 <_ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate@plt>
+    2fdb:	e9 02 ff ff ff       	jmp    2ee2 <_ZN11file_parser10parse_fileEP5array+0x132>
+	  this->setstate(ios_base::failbit);
+    2fe0:	48 8b 04 24          	mov    rax,QWORD PTR [rsp]
+    2fe4:	48 8b 78 e8          	mov    rdi,QWORD PTR [rax-0x18]
+    2fe8:	4c 01 f7             	add    rdi,r14
+    2feb:	8b 77 20             	mov    esi,DWORD PTR [rdi+0x20]
+    2fee:	83 ce 04             	or     esi,0x4
+    2ff1:	e8 ea f1 ff ff       	call   21e0 <_ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate@plt>
+    2ff6:	e9 1e ff ff ff       	jmp    2f19 <_ZN11file_parser10parse_fileEP5array+0x169>
+}
+    2ffb:	e8 10 f1 ff ff       	call   2110 <__stack_chk_fail@plt>
+    3000:	48 89 c3             	mov    rbx,rax
+    3003:	e9 01 f3 ff ff       	jmp    2309 <_ZN11file_parser10parse_fileEP5array.cold+0x1d>
+	__catch(...)
+    3008:	48 89 c7             	mov    rdi,rax
+    300b:	e9 1c f3 ff ff       	jmp    232c <_ZN11file_parser10parse_fileEP5array.cold+0x40>
+      ~basic_ios() { }
+    3010:	48 89 c3             	mov    rbx,rax
+    3013:	e9 45 f3 ff ff       	jmp    235d <_ZN11file_parser10parse_fileEP5array.cold+0x71>
+      { this->init(&_M_filebuf); }
+    3018:	48 89 c3             	mov    rbx,rax
+    301b:	e9 1b f3 ff ff       	jmp    233b <_ZN11file_parser10parse_fileEP5array.cold+0x4f>
+    3020:	48 89 c3             	mov    rbx,rax
+    3023:	e9 1b f3 ff ff       	jmp    2343 <_ZN11file_parser10parse_fileEP5array.cold+0x57>
+    3028:	0f 1f 84 00 00 00 00 	nop    DWORD PTR [rax+rax*1+0x0]
+    302f:	00 
+
+0000000000003030 <_ZNKSt5ctypeIcE8do_widenEc>:
+    3030:	89 f0                	mov    eax,esi
+    3032:	c3                   	ret
+    3033:	66 2e 0f 1f 84 00 00 	cs nop WORD PTR [rax+rax*1+0x0]
+    303a:	00 00 00 
+    303d:	0f 1f 00             	nop    DWORD PTR [rax]
+
+0000000000003040 <_ZN7sorting14insertion_sortEv>:
+#include "sorting.h"
+
+void
+sorting::insertion_sort()
+{
+  for(size_t i = 1; i < arr.size; i++)
+    3040:	4c 8b 57 08          	mov    r10,QWORD PTR [rdi+0x8]
+    3044:	49 83 fa 01          	cmp    r10,0x1
+    3048:	76 69                	jbe    30b3 <_ZN7sorting14insertion_sortEv+0x73>
+  {
+    const ARRAY_SPECIFIER  key = arr.ptr[i];
+    304a:	4c 8b 1f             	mov    r11,QWORD PTR [rdi]
+  for(size_t i = 1; i < arr.size; i++)
+    304d:	41 b8 01 00 00 00    	mov    r8d,0x1
+    3053:	4d 8d 4b 04          	lea    r9,[r11+0x4]
+    3057:	66 0f 1f 84 00 00 00 	nop    WORD PTR [rax+rax*1+0x0]
+    305e:	00 00 
+    const ARRAY_SPECIFIER  key = arr.ptr[i];
+    3060:	41 8b 39             	mov    edi,DWORD PTR [r9]
+    3063:	4c 89 c8             	mov    rax,r9
+    size_t j  = i;
+    3066:	4c 89 c2             	mov    rdx,r8
+    3069:	eb 11                	jmp    307c <_ZN7sorting14insertion_sortEv+0x3c>
+    306b:	0f 1f 44 00 00       	nop    DWORD PTR [rax+rax*1+0x0]
+        arr.ptr[j] = key;
+        break;
+      }
+      else
+      {
+        arr.ptr[j] = arr.ptr[j - 1];
+    3070:	89 08                	mov    DWORD PTR [rax],ecx
+      if(j == 0 || key > arr.ptr[j - 1])
+    3072:	48 8d 40 fc          	lea    rax,[rax-0x4]
+    3076:	48 83 ea 01          	sub    rdx,0x1
+    307a:	74 24                	je     30a0 <_ZN7sorting14insertion_sortEv+0x60>
+    307c:	8b 48 fc             	mov    ecx,DWORD PTR [rax-0x4]
+    307f:	48 89 c6             	mov    rsi,rax
+    3082:	39 f9                	cmp    ecx,edi
+    3084:	73 ea                	jae    3070 <_ZN7sorting14insertion_sortEv+0x30>
+  for(size_t i = 1; i < arr.size; i++)
+    3086:	49 83 c0 01          	add    r8,0x1
+        arr.ptr[j] = key;
+    308a:	89 3e                	mov    DWORD PTR [rsi],edi
+  for(size_t i = 1; i < arr.size; i++)
+    308c:	49 83 c1 04          	add    r9,0x4
+    3090:	4d 39 d0             	cmp    r8,r10
+    3093:	75 cb                	jne    3060 <_ZN7sorting14insertion_sortEv+0x20>
+    3095:	c3                   	ret
+    3096:	66 2e 0f 1f 84 00 00 	cs nop WORD PTR [rax+rax*1+0x0]
+    309d:	00 00 00 
+    30a0:	4c 89 de             	mov    rsi,r11
+    30a3:	49 83 c0 01          	add    r8,0x1
+    30a7:	49 83 c1 04          	add    r9,0x4
+        arr.ptr[j] = key;
+    30ab:	89 3e                	mov    DWORD PTR [rsi],edi
+  for(size_t i = 1; i < arr.size; i++)
+    30ad:	4d 39 d0             	cmp    r8,r10
+    30b0:	75 ae                	jne    3060 <_ZN7sorting14insertion_sortEv+0x20>
+    30b2:	c3                   	ret
+        j--;
+      }
+    } while(true);
+  }
+}
+    30b3:	c3                   	ret
+
+Disassembly of section .fini:
+
+00000000000030b4 <_fini>:
+    30b4:	f3 0f 1e fa          	endbr64
+    30b8:	48 83 ec 08          	sub    rsp,0x8
+    30bc:	48 83 c4 08          	add    rsp,0x8
+    30c0:	c3                   	ret
