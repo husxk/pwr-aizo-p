@@ -5,6 +5,7 @@ algorithms::set(size_t V, size_t E, const std::vector<edge_descr>& edges)
 {
   this->V = V;
   this->E = E;
+//  printf("\nV:%hhu, E:%zu\n", V, E);
 
   matrix.set(V, E, edges);
   matrix_res.set(V, E);

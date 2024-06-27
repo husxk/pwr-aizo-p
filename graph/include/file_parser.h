@@ -61,4 +61,7 @@ public:
 
   void
   generate_graph(size_t);
+
+  void
+  generate_graph(size_t, size_t);
 };

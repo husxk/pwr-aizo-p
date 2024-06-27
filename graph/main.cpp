@@ -2,6 +2,7 @@
 #include <stdint.h>
 #include <time.h>
 #include <stdlib.h>
+#include <iostream>
 
 #include "file_parser.h"
 #include "containers.h"
@@ -33,6 +34,26 @@ menu()
   return input;
 }
 
+size_t
+get_start()
+{
+  size_t a;
+  printf("\nInput v start: ");
+  std::cin >> a;
+  getchar();
+  return a;
+}
+
+size_t
+get_end()
+{
+  size_t a;
+  printf("\nInput v end: ");
+  std::cin >> a;
+  getchar();
+  return a;
+}
+
 int
 main()
 {
@@ -50,7 +71,6 @@ main()
        case '1':
        {
          parser->clear();
-         alg->clear();
          parser->get_filename();
          parser->parse_file();
          alg->set(parser->get_V(), parser->get_E(), parser->get_input());
@@ -85,12 +105,16 @@ main()
 
        case '6':
        {
-         alg->dijkstra();
+         size_t start = get_start();
+         size_t end   = get_end();
+         alg->dijkstra(start, end);
        } break;
 
        case '7':
        {
-         alg->bellman();
+         size_t start = get_start();
+         size_t end   = get_end();
+         alg->bellman(start, end);
        } break;
 
        case '8':

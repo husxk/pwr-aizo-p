@@ -138,7 +138,7 @@ struct edge_list
 
 class v_list
 {
-  int8_t V;
+  uint8_t V;
   std::vector<edge> edges;
   v_list* next;
 
@@ -196,8 +196,8 @@ class v_list
   edge_list*
   get_min_edges_list();
 
-  edge_i
-  edge_dijkstra(uint8_t*, uint8_t*);
+  void
+  edge_dijkstra(uint8_t*, uint8_t*,uint8_t*);
 
   void
   print();
@@ -209,7 +209,7 @@ class v_list
   min(size_t, uint8_t*);
 
   void
-  bellman(uint8_t*, uint8_t*, uint8_t*, uint8_t);
+  bellman(uint8_t*, uint8_t*, uint8_t*, size_t);
 };
 
 // 1  -> start
@@ -245,7 +245,7 @@ public:
 
   edge min(size_t, uint8_t*);
   edge_list* get_min_edges_list();
-  edge_i edge_dijkstra(uint8_t*, uint8_t*);
+  void  edge_dijkstra(uint8_t*, uint8_t*, uint8_t*);
   void bellman(uint8_t*, uint8_t*, uint8_t*);
 
   void

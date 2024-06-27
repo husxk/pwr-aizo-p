@@ -81,6 +81,14 @@ file_parser::get_random_V(int curr)
 }
 
 void
+file_parser::generate_graph(size_t V, size_t percent)
+{
+  this->V = V;
+  this->E = V - 1;
+  this->generate_graph(percent);
+}
+
+void
 file_parser::generate_graph(size_t percent)
 {
   // generate mst
@@ -91,23 +99,18 @@ file_parser::generate_graph(size_t percent)
      size_t end = i + 1;
 
      input.emplace_back(start, end, weight);
- //   printf("%zu, %zu, %zu\n", start, end, weight);
   }
-//  printf("\n");
-  size_t count = this-> V * (this->V - 1) * percent / 100;
-  //printf("%zu, %zu, %zu\n", count, this->E, input.size());
-  // fill with %
+  int64_t count = this-> V * (this->V - 1) * percent / 100;
 
-  //const size_t count = this-> V * (this->V - 1) * percent / 100;
+  // fill with %
   // substract added edges to get correct % of edges
   count -= this->E;
-  printf("%zu, %zu, %zu\n", this->V, this->E, input.size());
   if(count <= 0)
     return;
 
   this->E += count;
 
-  for(size_t i = 0; i < count; i++)
+  for(int64_t i = 0; i < count; i++)
   {
      size_t start  = rand() % (this->V - 1);
      size_t end    = get_random_V(start);
@@ -116,5 +119,4 @@ file_parser::generate_graph(size_t percent)
      input.emplace_back(start, end, weight);
   }
 
-//  printf("%zu, %zu, %zu\n", this->V, this->E, input.size());
 }

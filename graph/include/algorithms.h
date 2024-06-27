@@ -1,14 +1,18 @@
 #pragma once
 #include <cstdio>
 #include <cstring>
+#include <chrono>
 
 #include "containers.h"
 #include "edge_descr.h"
 
+#define NOW() \
+  std::chrono::high_resolution_clock::now()
+
 class algorithms
 {
-  uint8_t  V;
-  uint8_t  E;
+  uint8_t V;
+  size_t  E;
   nbor_matrix matrix;
   nbor_matrix matrix_res;
 
@@ -24,10 +28,12 @@ class algorithms
   res_dijkstra(uint8_t start, uint8_t end, const char* str)
   {
       printf("\n%s results for %hhu to %hhu:\n", str, start, end);
-     for(int i = end; d[i] != start; i = p[i])
-       printf("%hhu => %hhu\n", i, p[i]);
+     for(int i = end; i != start; i = p[i])
+       printf("%hhu => %hhu (%hhu)\n", i, p[i], d[i]);
      printf("Total: %hhu\n", d[end]);
   }
+
+  using time_ms = std::chrono::duration<float, std::chrono::milliseconds::period>;
 
 public:
 
@@ -64,7 +70,7 @@ public:
      if(lookup == nullptr)
        return;
 
-     printf("\nV:%hhu\n", V);
+//     printf("\nV:%hhu\n", V);
      memset(lookup, 0, V);
   }
 
@@ -91,9 +97,9 @@ public:
    {
      reset_mst();
      reset_pdk();
-     clear_data();
-     matrix.clear_data();
-     list.clear_data();
+//     clear_data();
+//     matrix.clear_data();
+//     list.clear_data();
    }
 
    void
@@ -145,9 +151,20 @@ public:
   {
      clear_data();
      reset_mst();
+
+     auto start_ = NOW();
      prim_matrix();
+     auto end_ = NOW();
+     auto elapsed = time_ms(end_ - start_);
+     printf("\n(PRIM) Matrix time elapsed: %fms\n", elapsed.count());
+
      reset_mst();
+
+     start_ = NOW();
      prim_list();
+     end_ = NOW();
+     elapsed = time_ms(end_ - start_);
+     printf("\n(PRIM) List time elapsed: %fms\n", elapsed.count());
   }
 
    void
@@ -157,9 +174,11 @@ public:
        lookup[i] = i;
 
      edge_list* min_edges = matrix.get_min_edges_list();
+ //    printf("E: %zu\n", E);
 
-     for(uint8_t i = 0; i < E; i++)
+     for(size_t i = 0; i < E; i++)
      {
+//      fprintf(stderr, "%zu ", i);
        edge* data = min_edges->data;
 
        // check if current edge is between vertices in the same group
@@ -184,7 +203,7 @@ public:
 
      edge_list* min_edges = list.get_min_edges_list();
 
-     for(uint8_t i = 0; i < E; i++)
+     for(size_t i = 0; i < E; i++)
      {
        edge* data = min_edges->data;
        uint8_t to_overwrite = lookup[data->end];
@@ -208,9 +227,21 @@ public:
   {
      clear_data();
      reset_mst();
+
+     auto start_ = NOW();
      kruskal_matrix();
+     auto end_  = NOW();
+     auto elapsed = time_ms(end_ - start_);
+
+     printf("\n(KRUSKAL) Matrix time elapsed: %fms\n", elapsed.count());
+
      reset_mst();
+
+     start_ = NOW();
      kruskal_list();
+     end_ = NOW();
+     elapsed = time_ms(end_ - start_);
+     printf("\n(KRUSKAL) Matrix time elapsed: %fms\n", elapsed.count());
   }
 
 #define START 0
@@ -221,19 +252,16 @@ public:
   {
      lookup[start] = 1;
      d[start] = 0;
-     p[start] = 0;
+     p[start] = start;
 
-     for(int i = 0; i < E; i++)
+     for(size_t i = 0; i < V; i++)
      {
-       edge_i e = matrix.edge_dijkstra((uint8_t*)lookup, k);
-       k[e.i] = 1;
+       matrix.edge_dijkstra((uint8_t*)lookup, d, p);
 
-       if(d[e.e.end] > d[e.e.start] + e.e.weight)
-       {
-         d[e.e.end] = d[e.e.start] + e.e.weight;
-         p[e.e.end] = e.e.start;
-       }
-       lookup[e.e.end] = 1;
+       //fix lookup
+       for(size_t i = 0; i < V; i++)
+         if(lookup[i] == 2)
+          lookup[i] = 1;
      }
   }
 
@@ -244,17 +272,14 @@ public:
      d[start] = 0;
      p[start] = start;
 
-     for(int i = 0; i < E; i++)
+     for(size_t i = 0; i < V; i++)
      {
-       edge_i e = list.edge_dijkstra((uint8_t*)lookup, k);
-       k[e.i]   = 1;
+//       fprintf(stderr, "V: %hhu\n", this->V);
+       list.edge_dijkstra((uint8_t*)lookup, d, p);
 
-       if(d[e.e.end] > d[e.e.start] + e.e.weight)
-       {
-         d[e.e.end] = d[e.e.start] + e.e.weight;
-         p[e.e.end] = e.e.start;
-       }
-       lookup[e.e.end] = 1;
+       for(size_t i = 0; i < V; i++)
+         if(lookup[i] == 2)
+           lookup[i] = 1;
      }
 
   }
@@ -265,12 +290,21 @@ public:
      clear_data();
      reset_pdk();
      reset_mst();
+
+     auto start_ = NOW();
      dijkstra_matrix(start);
+     auto end_ = NOW();
+     auto elapsed = time_ms(end_ - start_);
+     printf("\n(DIJKSTRA) Matrix time elapsed: %fms\n", elapsed.count());
      res_dijkstra(start, end, "Matrix");
 
      reset_pdk();
      reset_mst();
+     start_ = NOW();
      dijkstra_list(start);
+     end_ = NOW();
+     elapsed = time_ms(end_ - start_);
+     printf("\n(DIJKSTRA) List time elapsed: %fms\n", elapsed.count());
      res_dijkstra(start, end, "List");
   }
 
@@ -298,13 +332,22 @@ public:
      clear_data();
      reset_pdk();
      reset_mst();
+
+     auto start_ = NOW();
      bellman_matrix(start);
+     auto end_ = NOW();
+     auto elapsed = time_ms(end_ - start_);
+     printf("\n(BELLMAN) Matrix time elapsed: %fms\n", elapsed.count());
      res_dijkstra(start, end, "Matrix");
 
      clear_data();
      reset_pdk();
      reset_mst();
+     start_ = NOW();
      bellman_list(start);
+     end_ = NOW();
+     elapsed = time_ms(end_ - start_);
+     printf("\n(BELLMAN) List time elapsed: %fms\n", elapsed.count());
      res_dijkstra(start, end, "List");
 
 

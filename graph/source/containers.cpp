@@ -77,7 +77,7 @@ v_list::find(uint8_t V)
 {
   v_list* cur = this;
 
-  if(cur->V == -1)
+  if((int8_t)cur->V == -1)
     return this;
 
   while(cur != nullptr)
@@ -94,7 +94,7 @@ v_list::v_add(const edge_descr& edge)
 {
   v_list* cur = this;
 
-  if(cur->V == -1)
+  if((int8_t)cur->V == -1)
   {
      cur->V = edge.start;
      cur->edges.push_back(edge);
@@ -155,7 +155,7 @@ v_list::v_add(const edge& edge)
 {
   v_list* cur = this;
 
-  if(cur->V == -1)
+  if((int8_t)cur->V == -1)
   {
      cur->V = edge.start;
      cur->edges.push_back(edge);
@@ -232,41 +232,36 @@ v_list::get_min_edges_list()
   return min_list;
 }
 
-edge_i
-v_list::edge_dijkstra(uint8_t* lookup, uint8_t* k)
+void
+v_list::edge_dijkstra(uint8_t* lookup, uint8_t* d, uint8_t* p)
 {
-  edge_i m;
-  int i = 0;
   for(auto* cur = this; cur != nullptr; cur = cur->next)
   {
     // skip if cur V is not in lookup
+//    fprintf(stderr, "%hhu ", cur->V);
      if(lookup[cur->V] == 0)
        continue;
-     
+
      for(const auto& e : cur->edges)
      {
-       // if edge is checked -> skip
-       if(k[i] != 0)
-       {
-         i++;
+       // if edge is in checked -> skip
+       if(lookup[e.end] == 1)
          continue;
-       }
-       
-       if(m.e.weight > e.weight)
+
+       if(d[e.end] > d[e.start] + e.weight)
        {
-         m.e = e;
-         m.i = i;
+         d[e.end] = d[e.start] + e.weight;
+         p[e.end] = e.start;
+         lookup[e.end] = 2;
        }
-       i++;
      }
   }
-  return m;
 }
 
 void
-v_list::bellman(uint8_t* d, uint8_t* p, uint8_t* lookup, uint8_t E)
+v_list::bellman(uint8_t* d, uint8_t* p, uint8_t* lookup, size_t E)
 {
-  for(int i = 0; i < E - 1; i++)
+  for(size_t i = 0; i < E - 1; i++)
   {
      for(auto* cur = this; cur != nullptr; cur = cur->next)
      {
@@ -378,7 +373,8 @@ nbor_matrix::min(size_t x, uint8_t* mst)
 
      if((int8_t)end == -1)
      {
-       printf("Shouldnt happen\n");
+       printf("Shouldnt happen min\n");
+       printf("%hhu %zu", this->V, this->E);
        exit(1);
      }
 
@@ -396,13 +392,12 @@ nbor_matrix::min(size_t x, uint8_t* mst)
   return m;
 }
 
-edge_i
-nbor_matrix::edge_dijkstra(uint8_t* mst, uint8_t* k)
+void
+nbor_matrix::edge_dijkstra(uint8_t* lookup, uint8_t* d, uint8_t* p)
 {
-  edge_i m;
   for(size_t x = 0; x < V; x++)
   {
-     if(mst[x] == 0)
+     if(lookup[x] == 0)
       continue;
 
     for(size_t i = 0; i < E; i++)
@@ -412,29 +407,28 @@ nbor_matrix::edge_dijkstra(uint8_t* mst, uint8_t* k)
        // skip if there is no edge
        if(incidence[index] == 0)
          continue;
-       
-       // if this edge is checked -> skip
-       if(k[i] != 0)
-         continue;
-  
+
        const uint8_t end = find_end(i, x);
+
+       // skip if end is in mst
   
        if((int8_t)end == -1)
        {
          printf("Shouldnt happen\n");
          exit(1);
        }
-  
-        if(weights[index] < m.e.weight)
-        {
-           m.e.end    = end;
-           m.e.weight = weights[index];
-           m.e.start  = x;
-           m.i        = i;
-        }
+
+       if(lookup[end] == 1)
+         continue;
+
+       if(d[end] > d[x] + weights[index])
+       {
+         d[end] = d[x] + weights[index];
+         p[end] = x;
+         lookup[end] = 2;
+       }
     }
   }
-  return m;
 }
 
 edge
@@ -449,7 +443,7 @@ nbor_matrix::find_edge(uint8_t i)
       end = find_end(i, j);
       if((int8_t) end == -1)
       {
-        printf("Shouldnt happen\n");
+        printf("Shouldnt happen find edge\n");
         exit(1);
       }
       weight = weights[i + start * E];
@@ -465,7 +459,7 @@ nbor_matrix::get_min_edges_list()
 {
   edge_list* min_list = new edge_list(find_edge(0));
 
-  for(uint8_t i = 1; i < E; i++)
+  for(size_t i = 1; i < E; i++)
      min_list->add_sorted(find_edge(i));
   return min_list;
 }
@@ -483,16 +477,16 @@ nbor_matrix::add_edge(edge& e)
 void
 nbor_matrix::bellman(uint8_t* d, uint8_t* p, uint8_t* lookup)
 {
-  for(uint8_t i = 0; i < E - 1; i++)
+  for(size_t i = 0; i < E - 1; i++)
   {
     for(uint8_t j = 0; j < V; j++)
     {
       if(lookup[j] == 0)
         continue;
 
-      for(uint8_t z = 0; z < E; z++)
+      for(size_t z = 0; z < E; z++)
       {
-        const int index = z + j * E;
+        const size_t index = z + j * E;
         if(incidence[index] == 0 || incidence[index] == -1)
           continue;
 
