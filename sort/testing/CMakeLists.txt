@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.13)
 
-project(sort CXX)
+project(testing CXX)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -17,17 +17,17 @@ set(CMAKE_BUILD_TYPE RELEASE)
 #        )
 
 file(GLOB src
-     ./source/*.cpp
+     ../source/*.cpp
      )
 
 add_executable(
         ${PROJECT_NAME}
-        sort.cpp
+        testing.cpp
         ${src}
         )
 
 target_include_directories(
         ${PROJECT_NAME} PRIVATE
-        ./include/
+        ../include/
         )
 

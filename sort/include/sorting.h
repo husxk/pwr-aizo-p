@@ -11,6 +11,35 @@ class sorting
 public:
   array<T> arr;
 
+  ~sorting()
+  {
+    arr.ptr = NULL;
+  }
+
+  void 
+  presort(int input)
+  {
+    switch(input)
+    {
+      case '1':
+      {
+        quicksort(0, arr.size/3);
+      } break;
+
+      case '2':
+      {
+        quicksort(0, (arr.size * 2)/3);
+      } break;
+
+      case '3':
+      {
+        auto size = arr.size - 1;
+        for(int32_t i = size / 2 - 1; i >= 0; i--)
+          prepare_heap(i, size);
+      } break;
+    }
+  }
+
   void
   insertion_sort()
   {
@@ -43,14 +72,6 @@ public:
     this->arr.size = other->size;
   }
 
-  sorting()
-  {
-  }
-
-  ~sorting()
-  {
-  }
-
   void
   shell_calculate_gaps(int type)
   {
@@ -78,7 +99,17 @@ public:
   void
   heap_sort()
   {
-    
+    const size_t size = arr.size - 1;
+    for(int32_t i = size / 2 - 1; i >= 0; i--)
+      prepare_heap(i, size);
+
+    for(size_t i = size; i > 0; i--)
+    {
+      arr.swap(0, i);
+
+      // fix heap
+      prepare_heap(0, i);
+    }
   }
 
   void
@@ -147,8 +178,27 @@ private:
     }
 
     shell_gap /= 9;
-    printf("gaps: %zu", shell_gap);
     gap_div_num = 3;
+  }
+
+  void
+  prepare_heap(size_t n_root, size_t size)
+  {
+    size_t largest = n_root;
+    size_t l = 2 * n_root + 1;
+    size_t r = 2 * n_root + 2;
+
+    if(l < size && arr.ptr[l] > arr.ptr[largest])
+      largest = l;
+
+    if(r < size && arr.ptr[r] > arr.ptr[largest])
+      largest = r;
+
+    if(largest != n_root)
+    {
+      arr.swap(largest, n_root);
+      prepare_heap(largest, size);
+    }
   }
 
   size_t shell_gap;

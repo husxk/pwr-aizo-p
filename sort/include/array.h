@@ -3,6 +3,7 @@
 #include <cstring>
 #include <cstdio>
 #include <cstdint>
+#include <algorithm>
 
 template <class T>
 class array
@@ -33,9 +34,7 @@ public:
   void
   swap(int32_t l, int32_t r)
   {
-    T tmp = ptr[l];
-    ptr[l] = ptr[r];
-    ptr[r] = tmp;
+    std::swap(ptr[l], ptr[r]);
   }
 
   bool

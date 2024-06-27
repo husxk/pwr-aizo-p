@@ -14,13 +14,14 @@ choose_sort()
   printf("2. Shell sort\n");
   printf("3. Quick sort\n");
   printf("4. Heap sort\n");
-  printf("5. Exit\n");
+  printf("5. Do presort\n");
+  printf("6. Exit\n");
   printf("\nInput:  ");
 
   const char input = getchar();
   getchar();
 
-  if(input < 49 || input > 53)
+  if(input < 49 || input > 54)
   {
     printf("\nWrong input, try again!\n");
     return choose_sort();
@@ -67,6 +68,27 @@ pick_pivot()
   return input;
 }
 
+static int
+handle_presort()
+{
+  printf("\nChoose:\n");
+  printf("1. 33%%\n");
+  printf("2. 66%%\n");
+  printf("3. Desc\n");
+  printf("4. Exit\n");
+  printf("\nInput:  ");
+
+  const char input = getchar();
+  getchar();
+
+  if(input < 49 || input > 52)
+  {
+    printf("\nWrong input, try again!\n");
+    return handle_presort();
+  }
+  return input;
+}
+
 #define NOW() \
         std::chrono::high_resolution_clock::now()
 
@@ -76,9 +98,17 @@ handle_sorting(array<T>* arr, array<T>* arr_sort, sorting<T>* sort)
 {
   using time_ms = std::chrono::duration<float, std::chrono::milliseconds::period>;
 
-  const int sort_ = choose_sort();
-  
-  if(sort_ == '5')
+  int sort_ = choose_sort();
+
+  while(sort_ == '5')
+  {
+    auto input = handle_presort();
+    sort->presort(input);
+
+    sort_ = choose_sort();
+  }
+
+  if(sort_ == '6')
     return;
 
   arr_sort->copy(arr);

@@ -7,7 +7,7 @@
 void
 get_random_x(uint8_t* dest, size_t size)
 {
-  std::ifstream file("/dev/radnom");
+  std::ifstream file("/dev/random");
 
   if(!file.good())
   {
